@@ -94,7 +94,8 @@ class Publish : public
         comms::option::StaticNumIdImpl<mqtt5::MsgId_Publish>,
         comms::option::FieldsImpl<typename PublishFields<TOpt>::All>,
         comms::option::MsgType<Publish<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::HasName,
+        comms::option::HasCustomRefresh
     >
 {
     // Redefinition of the base class type
@@ -104,7 +105,8 @@ class Publish : public
             comms::option::StaticNumIdImpl<mqtt5::MsgId_Publish>,
             comms::option::FieldsImpl<typename PublishFields<TOpt>::All>,
             comms::option::MsgType<Publish<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::HasName,
+            comms::option::HasCustomRefresh
         >;
 
 public:
@@ -135,6 +137,41 @@ public:
         return "PUBLISH";
     }
     
+    /// @brief Custom read functionality
+    template <typename TIter>
+    comms::ErrorStatus doRead(TIter& iter, std::size_t len)
+    {
+        refresh_packetId(); // make sure the mode of "packet ID" is correct
+        return Base::doRead(iter, len);
+    }
+    
+    /// @brief Custom refresh functionality
+    bool doRefresh()
+    {
+        bool updated = Base::doRefresh();
+        return refresh_packetId() || updated;
+    }
+    
+    
+private:
+    bool refresh_packetId()
+    {
+        auto& qosField = Base::transportField_flags().field_qos();
+        using QosFieldType = typename std::decay<decltype(qosField)>::type;
+        using QosValueType = typename QosFieldType::ValueType;
+        
+        auto mode = comms::field::OptionalMode::Missing;
+        if (QosValueType::AtMostOnceDelivery < qosField.value()) {
+            mode = comms::field::OptionalMode::Exists;
+        }
+        
+        if (field_packetId().getMode() == mode) {
+            return false;
+        }
+        
+        field_packetId().setMode(mode);
+        return true;
+    }
     
 };
 
