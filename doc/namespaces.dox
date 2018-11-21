@@ -1,0 +1,18 @@
+/// @namespace mqtt5
+/// @brief Main namespace for all classes / functions of this protocol library.
+
+/// @namespace mqtt5::message
+/// @brief Main namespace for all the messages defined in this protocol.
+
+/// @namespace mqtt5::field
+/// @brief Main namespace for all the stand alone fields defined in this protocol.
+
+/// @namespace mqtt5::frame
+/// @brief Main namespace for all the frames.
+
+/// @namespace mqtt5::frame::layer
+/// @brief Main namespace for the custom frame layers.
+
+/// @namespace mqtt5::frame::checksum
+/// @brief Main namespace for the custom frame layers.
+

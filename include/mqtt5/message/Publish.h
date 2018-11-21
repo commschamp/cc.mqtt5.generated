@@ -1,0 +1,145 @@
+/// @file
+/// @brief Contains definition of <b>"PUBLISH"</b> message and its fields.
+
+#pragma once
+
+#include <cstdint>
+#include <tuple>
+#include "comms/MessageBase.h"
+#include "comms/field/ArrayList.h"
+#include "comms/field/Optional.h"
+#include "comms/options.h"
+#include "mqtt5/DefaultOptions.h"
+#include "mqtt5/MsgId.h"
+#include "mqtt5/field/FieldBase.h"
+#include "mqtt5/field/PacketId.h"
+#include "mqtt5/field/PropertiesList.h"
+#include "mqtt5/field/Topic.h"
+
+namespace mqtt5
+{
+
+namespace message
+{
+
+/// @brief Fields of @ref Publish.
+/// @tparam TOpt Extra options
+/// @see @ref Publish
+/// @headerfile "mqtt5/message/Publish.h"
+template <typename TOpt = mqtt5::DefaultOptions>
+struct PublishFields
+{
+    /// @brief Definition of <b>"Topic"</b> field.
+    using Topic =
+        mqtt5::field::Topic<
+           TOpt
+       >;
+    
+    /// @brief Definition of <b>"Packet ID"</b> field.
+    struct PacketId : public
+        comms::field::Optional<
+            mqtt5::field::PacketId<TOpt>,
+            comms::option::MissingByDefault
+        >
+    {
+        /// @brief Name of the field.
+        static const char* name()
+        {
+            return "Packet ID";
+        }
+        
+    };
+    
+    /// @brief Definition of <b>"Properties"</b> field.
+    using PropertiesList =
+        mqtt5::field::PropertiesList<
+           TOpt
+       >;
+    
+    /// @brief Definition of <b>"Payload"</b> field.
+    struct Payload : public
+        comms::field::ArrayList<
+            mqtt5::field::FieldBase<>,
+            std::uint8_t,
+            typename TOpt::message::PublishFields::Payload
+        >
+    {
+        /// @brief Name of the field.
+        static const char* name()
+        {
+            return "Payload";
+        }
+        
+    };
+    
+    /// @brief All the fields bundled in std::tuple.
+    using All = std::tuple<
+        Topic,
+        PacketId,
+        PropertiesList,
+        Payload
+    >;
+};
+
+/// @brief Definition of <b>"PUBLISH"</b> message class.
+/// @details
+///     See @ref PublishFields for definition of the fields this message contains.
+/// @tparam TMsgBase Base (interface) class.
+/// @tparam TOpt Extra options
+/// @headerfile "mqtt5/message/Publish.h"
+template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+class Publish : public
+    comms::MessageBase<
+        TMsgBase,
+        comms::option::StaticNumIdImpl<mqtt5::MsgId_Publish>,
+        comms::option::FieldsImpl<typename PublishFields<TOpt>::All>,
+        comms::option::MsgType<Publish<TMsgBase, TOpt> >,
+        comms::option::HasName
+    >
+{
+    // Redefinition of the base class type
+    using Base =
+        comms::MessageBase<
+            TMsgBase,
+            comms::option::StaticNumIdImpl<mqtt5::MsgId_Publish>,
+            comms::option::FieldsImpl<typename PublishFields<TOpt>::All>,
+            comms::option::MsgType<Publish<TMsgBase, TOpt> >,
+            comms::option::HasName
+        >;
+
+public:
+    /// @brief Allow access to internal fields.
+    /// @details See definition of @b COMMS_MSG_FIELDS_ACCESS macro
+    ///     related to @b comms::MessageBase class from COMMS library
+    ///     for details.
+    ///
+    ///     The generated functions are:
+    ///     @li @b field_topic() for @ref PublishFields::Topic field.
+    ///     @li @b field_packetId() for @ref PublishFields::PacketId field.
+    ///     @li @b field_propertiesList() for @ref PublishFields::PropertiesList field.
+    ///     @li @b field_payload() for @ref PublishFields::Payload field.
+    COMMS_MSG_FIELDS_ACCESS(
+        topic,
+        packetId,
+        propertiesList,
+        payload
+    );
+    
+    // Compile time check for serialisation length.
+    static const std::size_t MsgMinLen = Base::doMinLength();
+    static_assert(MsgMinLen == 3U, "Unexpected min serialisation length");
+    
+    /// @brief Name of the message.
+    static const char* doName()
+    {
+        return "PUBLISH";
+    }
+    
+    
+};
+
+} // namespace message
+
+} // namespace mqtt5
+
+
