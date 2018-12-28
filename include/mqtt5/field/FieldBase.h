@@ -5,6 +5,7 @@
 
 #include "comms/Field.h"
 #include "comms/options.h"
+#include "mqtt5/Version.h"
 
 namespace mqtt5
 {

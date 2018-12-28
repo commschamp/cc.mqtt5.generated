@@ -22,8 +22,8 @@ template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
 struct String : public
     comms::field::String<
         mqtt5::field::FieldBase<>,
-        typename TOpt::field::String,
         TExtraOpts...,
+        typename TOpt::field::String,
         comms::option::SequenceSerLengthFieldPrefix<mqtt5::field::Length<TOpt> >
     >
 {
