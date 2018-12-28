@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstdint>
+#include "mqtt5/Version.h"
 
 namespace mqtt5
 {

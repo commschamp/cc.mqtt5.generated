@@ -48,8 +48,8 @@ struct PropertiesList : public
     comms::field::ArrayList<
         mqtt5::field::FieldBase<>,
         mqtt5::field::Property<TOpt>,
-        typename TOpt::field::PropertiesList,
         TExtraOpts...,
+        typename TOpt::field::PropertiesList,
         comms::option::SequenceSerLengthFieldPrefix<typename PropertiesListMembers<TOpt>::Length>
     >
 {
