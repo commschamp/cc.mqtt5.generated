@@ -60,7 +60,7 @@ struct SubscribeFields
             /// @brief Scope for all the member fields of @ref Options bitfield.
             struct OptionsMembers
             {
-                /// @brief Values enumerator for @ref Qos field.
+                /// @brief Values enumerator for @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::Qos field.
                 enum class QosVal : std::uint8_t
                 {
                     AtMostOnceDelivery = 0, ///< value @b AtMostOnceDelivery
@@ -70,6 +70,7 @@ struct SubscribeFields
                 };
                 
                 /// @brief Definition of <b>"Qos"</b> field.
+                /// @see @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::QosVal
                 struct Qos : public
                     comms::field::EnumValue<
                         mqtt5::field::FieldBase<>,
@@ -120,7 +121,7 @@ struct SubscribeFields
                     
                 };
                 
-                /// @brief Values enumerator for @ref RetainHandling field.
+                /// @brief Values enumerator for @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
                 enum class RetainHandlingVal : std::uint8_t
                 {
                     Send = 0, ///< value @b Send
@@ -130,6 +131,7 @@ struct SubscribeFields
                 };
                 
                 /// @brief Definition of <b>"Retain Handling"</b> field.
+                /// @see @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandlingVal
                 struct RetainHandling : public
                     comms::field::EnumValue<
                         mqtt5::field::FieldBase<>,

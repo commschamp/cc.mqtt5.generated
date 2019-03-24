@@ -15,7 +15,7 @@ namespace mqtt5
 namespace field
 {
 
-/// @brief Values enumerator for @ref EnableEnum field.
+/// @brief Values enumerator for @ref mqtt5::field::EnableEnum field.
 enum class EnableEnumVal : std::uint8_t
 {
     Disabled = 0, ///< value @b Disabled
@@ -24,6 +24,7 @@ enum class EnableEnumVal : std::uint8_t
 };
 
 /// @brief Definition of <b>"EnableEnum"</b> field.
+/// @see @ref mqtt5::field::EnableEnumVal
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
 template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>

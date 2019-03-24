@@ -15,7 +15,7 @@ namespace mqtt5
 namespace field
 {
 
-/// @brief Values enumerator for @ref ReasonCode field.
+/// @brief Values enumerator for @ref mqtt5::field::ReasonCode field.
 enum class ReasonCodeVal : std::uint8_t
 {
     Success = 0, ///< value @b Success
@@ -67,6 +67,7 @@ enum class ReasonCodeVal : std::uint8_t
 };
 
 /// @brief Definition of <b>"Reason Code"</b> field.
+/// @see @ref mqtt5::field::ReasonCodeVal
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
 template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
