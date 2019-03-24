@@ -66,6 +66,7 @@ struct MessageFields
         };
         
         /// @brief Definition of <b>"Qos"</b> field.
+        /// @see @ref QosVal
         struct Qos : public
             comms::field::EnumValue<
                 mqtt5::field::FieldBase<>,

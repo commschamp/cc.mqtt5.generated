@@ -50,7 +50,7 @@ struct PropertyMembers
             
         };
         
-        /// @brief Values enumerator for @ref Value field.
+        /// @brief Values enumerator for @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::Value field.
         enum class ValueVal : std::uint8_t
         {
             Unspecified = 0, ///< value @b Unspecified
@@ -59,6 +59,7 @@ struct PropertyMembers
         };
         
         /// @brief Definition of <b>"Value"</b> field.
+        /// @see @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::ValueVal
         struct Value : public
             comms::field::EnumValue<
                 mqtt5::field::FieldBase<>,
@@ -1554,7 +1555,7 @@ struct PropertyMembers
             
         };
         
-        /// @brief Values enumerator for @ref Value field.
+        /// @brief Values enumerator for @ref mqtt5::field::PropertyMembers::MaxQosMembers::Value field.
         enum class ValueVal : std::uint8_t
         {
             AtMostOnceDelivery = 0, ///< value @b AtMostOnceDelivery
@@ -1563,6 +1564,7 @@ struct PropertyMembers
         };
         
         /// @brief Definition of <b>"Value"</b> field.
+        /// @see @ref mqtt5::field::PropertyMembers::MaxQosMembers::ValueVal
         struct Value : public
             comms::field::EnumValue<
                 mqtt5::field::FieldBase<>,
