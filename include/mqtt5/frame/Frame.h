@@ -10,10 +10,10 @@
 #include "comms/options.h"
 #include "comms/protocol/MsgDataLayer.h"
 #include "comms/protocol/MsgSizeLayer.h"
-#include "mqtt5/AllMessages.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/frame/layer/IdAndFlags.h"
+#include "mqtt5/input/AllMessages.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -25,7 +25,7 @@ namespace frame
 /// @tparam TOpt Protocol options.
 /// @see @ref Frame
 /// @headerfile "mqtt5/frame/Frame.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct FrameLayers
 {
     /// @brief Definition of layer "Data".
@@ -168,8 +168,8 @@ struct FrameLayers
 /// @headerfile "mqtt5/frame/Frame.h"
 template <
    typename TMessage,
-   typename TAllMessages = mqtt5::AllMessages<TMessage>,
-   typename TOpt = mqtt5::DefaultOptions
+   typename TAllMessages = mqtt5::input::AllMessages<TMessage>,
+   typename TOpt = mqtt5::options::DefaultOptions
 >
 class Frame : public
     FrameLayers<TOpt>::template Stack<TMessage, TAllMessages>

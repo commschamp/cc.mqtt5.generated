@@ -6,11 +6,11 @@
 #include <tuple>
 #include "comms/MessageBase.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/MsgId.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/PropertiesList.h"
 #include "mqtt5/field/ReasonCode.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -22,20 +22,20 @@ namespace message
 /// @tparam TOpt Extra options
 /// @see @ref Disconnect
 /// @headerfile "mqtt5/message/Disconnect.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct DisconnectFields
 {
     /// @brief Definition of <b>"Reason Code"</b> field.
     using ReasonCode =
         mqtt5::field::ReasonCode<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Properties"</b> field.
     using PropertiesList =
         mqtt5::field::PropertiesList<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief All the fields bundled in std::tuple.
     using All = std::tuple<
@@ -50,7 +50,7 @@ struct DisconnectFields
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
 /// @headerfile "mqtt5/message/Disconnect.h"
-template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Disconnect : public
     comms::MessageBase<
         TMsgBase,

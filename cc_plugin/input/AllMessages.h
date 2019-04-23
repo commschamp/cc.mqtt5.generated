@@ -23,6 +23,9 @@ namespace mqtt5
 namespace cc_plugin
 {
 
+namespace input
+{
+
 using AllMessages =
     std::tuple<
         mqtt5::cc_plugin::message::Connect,
@@ -41,6 +44,8 @@ using AllMessages =
         mqtt5::cc_plugin::message::Disconnect,
         mqtt5::cc_plugin::message::Auth
     >;
+
+} // namespace input
 
 } // namespace cc_plugin
 

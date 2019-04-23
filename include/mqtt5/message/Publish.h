@@ -9,12 +9,12 @@
 #include "comms/field/ArrayList.h"
 #include "comms/field/Optional.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/MsgId.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/PacketId.h"
 #include "mqtt5/field/PropertiesList.h"
 #include "mqtt5/field/Topic.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -26,14 +26,14 @@ namespace message
 /// @tparam TOpt Extra options
 /// @see @ref Publish
 /// @headerfile "mqtt5/message/Publish.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct PublishFields
 {
     /// @brief Definition of <b>"Topic"</b> field.
     using Topic =
         mqtt5::field::Topic<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Packet ID"</b> field.
     struct PacketId : public
@@ -53,8 +53,8 @@ struct PublishFields
     /// @brief Definition of <b>"Properties"</b> field.
     using PropertiesList =
         mqtt5::field::PropertiesList<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Payload"</b> field.
     struct Payload : public
@@ -87,7 +87,7 @@ struct PublishFields
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
 /// @headerfile "mqtt5/message/Publish.h"
-template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Publish : public
     comms::MessageBase<
         TMsgBase,

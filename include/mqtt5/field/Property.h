@@ -5,17 +5,18 @@
 
 #include <cstdint>
 #include <tuple>
+#include <type_traits>
 #include "comms/field/Bundle.h"
 #include "comms/field/EnumValue.h"
 #include "comms/field/IntValue.h"
 #include "comms/field/Variant.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/field/BinData.h"
 #include "mqtt5/field/EnableEnum.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/String.h"
 #include "mqtt5/field/VarLenInt.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -25,7 +26,7 @@ namespace field
 
 /// @brief Scope for all the member fields of @ref Property bitfield.
 /// @tparam TOpt Protocol options.
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct PropertyMembers
 {
     /// @brief Scope for all the member fields of @ref PayloadFormatIndicator bitfield.
@@ -71,6 +72,22 @@ struct PropertyMembers
             static const char* name()
             {
                 return "Value";
+            }
+            
+            /// @brief Retrieve name of the enum value
+            static const char* valueName(ValueVal val)
+            {
+                static const char* Map[] = {
+                    "Unspecified",
+                    "UTF-8"
+                };
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                
+                if (MapSize <= static_cast<std::size_t>(val)) {
+                    return nullptr;
+                }
+                
+                return Map[static_cast<std::size_t>(val)];
             }
             
         };
@@ -222,8 +239,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -300,8 +317,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -378,8 +395,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::BinData<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -456,8 +473,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::VarLenInt<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -614,8 +631,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -772,8 +789,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -850,8 +867,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::BinData<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -928,8 +945,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1086,8 +1103,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1164,8 +1181,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1242,8 +1259,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1320,8 +1337,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1578,6 +1595,22 @@ struct PropertyMembers
                 return "Value";
             }
             
+            /// @brief Retrieve name of the enum value
+            static const char* valueName(ValueVal val)
+            {
+                static const char* Map[] = {
+                    "AtMostOnceDelivery",
+                    "AtLeastOnceDelivery"
+                };
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                
+                if (MapSize <= static_cast<std::size_t>(val)) {
+                    return nullptr;
+                }
+                
+                return Map[static_cast<std::size_t>(val)];
+            }
+            
         };
         
         /// @brief All members bundled in @b std::tuple.
@@ -1647,8 +1680,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -1728,8 +1761,8 @@ struct PropertyMembers
             /// @brief Definition of <b>"First"</b> field.
             struct First : public
                 mqtt5::field::String<
-                   TOpt
-               >
+                    TOpt
+                >
             {
                 /// @brief Name of the field.
                 static const char* name()
@@ -1742,8 +1775,8 @@ struct PropertyMembers
             /// @brief Definition of <b>"Second"</b> field.
             struct Second : public
                 mqtt5::field::String<
-                   TOpt
-               >
+                    TOpt
+                >
             {
                 /// @brief Name of the field.
                 static const char* name()
@@ -1941,8 +1974,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -2019,8 +2052,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -2097,8 +2130,8 @@ struct PropertyMembers
         /// @brief Definition of <b>"Value"</b> field.
         struct Value : public
             mqtt5::field::EnableEnum<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -2185,7 +2218,7 @@ struct PropertyMembers
 /// @brief Definition of <b>""</b> field.
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
-template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
+template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
 class Property : public
     comms::field::Variant<
         mqtt5::field::FieldBase<>,

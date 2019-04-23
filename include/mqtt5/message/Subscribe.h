@@ -5,6 +5,7 @@
 
 #include <cstdint>
 #include <tuple>
+#include <type_traits>
 #include "comms/MessageBase.h"
 #include "comms/field/ArrayList.h"
 #include "comms/field/Bitfield.h"
@@ -13,12 +14,12 @@
 #include "comms/field/EnumValue.h"
 #include "comms/field/IntValue.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/MsgId.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/PacketId.h"
 #include "mqtt5/field/PropertiesList.h"
 #include "mqtt5/field/Topic.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -30,20 +31,20 @@ namespace message
 /// @tparam TOpt Extra options
 /// @see @ref Subscribe
 /// @headerfile "mqtt5/message/Subscribe.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct SubscribeFields
 {
     /// @brief Definition of <b>"Packet ID"</b> field.
     using PacketId =
         mqtt5::field::PacketId<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Properties"</b> field.
     using PropertiesList =
         mqtt5::field::PropertiesList<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Scope for all the member fields of @ref List list.
     struct ListMembers
@@ -54,8 +55,8 @@ struct SubscribeFields
             /// @brief Definition of <b>"Topic"</b> field.
             using Topic =
                 mqtt5::field::Topic<
-                   TOpt
-               >;
+                    TOpt
+                >;
             
             /// @brief Scope for all the member fields of @ref Options bitfield.
             struct OptionsMembers
@@ -83,6 +84,23 @@ struct SubscribeFields
                     static const char* name()
                     {
                         return "Qos";
+                    }
+                    
+                    /// @brief Retrieve name of the enum value
+                    static const char* valueName(QosVal val)
+                    {
+                        static const char* Map[] = {
+                            "AtMostOnceDelivery",
+                            "AtLeastOnceDelivery",
+                            "ExactlyOnceDelivery"
+                        };
+                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                        
+                        if (MapSize <= static_cast<std::size_t>(val)) {
+                            return nullptr;
+                        }
+                        
+                        return Map[static_cast<std::size_t>(val)];
                     }
                     
                 };
@@ -119,6 +137,24 @@ struct SubscribeFields
                         return "";
                     }
                     
+                    /// @brief Retrieve name of the bit
+                    static const char* bitName(BitIdx idx)
+                    {
+                        static const char* Map[] = {
+                            "NL",
+                            "RAP"
+                        };
+                    
+                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                        static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
+                    
+                        if (MapSize <= static_cast<std::size_t>(idx)) {
+                            return nullptr;
+                        }
+                    
+                        return Map[static_cast<std::size_t>(idx)];
+                    }
+                    
                 };
                 
                 /// @brief Values enumerator for @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
@@ -144,6 +180,23 @@ struct SubscribeFields
                     static const char* name()
                     {
                         return "Retain Handling";
+                    }
+                    
+                    /// @brief Retrieve name of the enum value
+                    static const char* valueName(RetainHandlingVal val)
+                    {
+                        static const char* Map[] = {
+                            "Send",
+                            "SendIfNotExists",
+                            "DontSend"
+                        };
+                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                        
+                        if (MapSize <= static_cast<std::size_t>(val)) {
+                            return nullptr;
+                        }
+                        
+                        return Map[static_cast<std::size_t>(val)];
                     }
                     
                 };
@@ -287,7 +340,7 @@ struct SubscribeFields
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
 /// @headerfile "mqtt5/message/Subscribe.h"
-template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Subscribe : public
     comms::MessageBase<
         TMsgBase,
