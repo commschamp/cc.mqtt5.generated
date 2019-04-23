@@ -5,6 +5,7 @@
 
 #include <cstdint>
 #include <tuple>
+#include <type_traits>
 #include "comms/MessageBase.h"
 #include "comms/field/Bitfield.h"
 #include "comms/field/BitmaskValue.h"
@@ -12,13 +13,13 @@
 #include "comms/field/IntValue.h"
 #include "comms/field/Optional.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/MsgId.h"
 #include "mqtt5/field/BinData.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/PropertiesList.h"
 #include "mqtt5/field/ProtocolName.h"
 #include "mqtt5/field/String.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -30,14 +31,14 @@ namespace message
 /// @tparam TOpt Extra options
 /// @see @ref Connect
 /// @headerfile "mqtt5/message/Connect.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct ConnectFields
 {
     /// @brief Definition of <b>"Protocol Name"</b> field.
     using ProtocolName =
         mqtt5::field::ProtocolName<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Protocol Version"</b> field.
     struct ProtocolVersion : public
@@ -106,6 +107,25 @@ struct ConnectFields
                 return "";
             }
             
+            /// @brief Retrieve name of the bit
+            static const char* bitName(BitIdx idx)
+            {
+                static const char* Map[] = {
+                    nullptr,
+                    "Clean Start",
+                    "Will Flag"
+                };
+            
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
+            
+                if (MapSize <= static_cast<std::size_t>(idx)) {
+                    return nullptr;
+                }
+            
+                return Map[static_cast<std::size_t>(idx)];
+            }
+            
         };
         
         /// @brief Values enumerator for @ref mqtt5::message::ConnectFields::FlagsMembers::WillQos field.
@@ -131,6 +151,23 @@ struct ConnectFields
             static const char* name()
             {
                 return "Will QoS";
+            }
+            
+            /// @brief Retrieve name of the enum value
+            static const char* valueName(WillQosVal val)
+            {
+                static const char* Map[] = {
+                    "AtMostOnceDelivery",
+                    "AtLeastOnceDelivery",
+                    "ExactlyOnceDelivery"
+                };
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                
+                if (MapSize <= static_cast<std::size_t>(val)) {
+                    return nullptr;
+                }
+                
+                return Map[static_cast<std::size_t>(val)];
             }
             
         };
@@ -167,6 +204,25 @@ struct ConnectFields
             static const char* name()
             {
                 return "";
+            }
+            
+            /// @brief Retrieve name of the bit
+            static const char* bitName(BitIdx idx)
+            {
+                static const char* Map[] = {
+                    "Will Retain",
+                    "Password Flag",
+                    "User Name Flag"
+                };
+            
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
+            
+                if (MapSize <= static_cast<std::size_t>(idx)) {
+                    return nullptr;
+                }
+            
+                return Map[static_cast<std::size_t>(idx)];
             }
             
         };
@@ -234,14 +290,14 @@ struct ConnectFields
     /// @brief Definition of <b>"Properties"</b> field.
     using Properties =
         mqtt5::field::PropertiesList<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Client ID"</b> field.
     struct ClientId : public
         mqtt5::field::String<
-           TOpt
-       >
+            TOpt
+        >
     {
         /// @brief Name of the field.
         static const char* name()
@@ -257,8 +313,8 @@ struct ConnectFields
         /// @brief Definition of <b>"Will Properties"</b> field.
         struct WillProperties : public
             mqtt5::field::PropertiesList<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -291,8 +347,8 @@ struct ConnectFields
         /// @brief Definition of <b>"Will Topic"</b> field.
         struct WillTopic : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -325,8 +381,8 @@ struct ConnectFields
         /// @brief Definition of <b>"Will Message"</b> field.
         struct WillMessage : public
             mqtt5::field::BinData<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -359,8 +415,8 @@ struct ConnectFields
         /// @brief Definition of <b>"User Name"</b> field.
         struct UserName : public
             mqtt5::field::String<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -393,8 +449,8 @@ struct ConnectFields
         /// @brief Definition of <b>"Password"</b> field.
         struct Password : public
             mqtt5::field::BinData<
-               TOpt
-           >
+                TOpt
+            >
         {
             /// @brief Name of the field.
             static const char* name()
@@ -443,7 +499,7 @@ struct ConnectFields
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
 /// @headerfile "mqtt5/message/Connect.h"
-template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Connect : public
     comms::MessageBase<
         TMsgBase,

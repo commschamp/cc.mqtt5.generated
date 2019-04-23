@@ -4,14 +4,15 @@
 #pragma once
 
 #include <tuple>
+#include <type_traits>
 #include "comms/MessageBase.h"
 #include "comms/field/BitmaskValue.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/MsgId.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/PropertiesList.h"
 #include "mqtt5/field/ReasonCode.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -23,7 +24,7 @@ namespace message
 /// @tparam TOpt Extra options
 /// @see @ref Connack
 /// @headerfile "mqtt5/message/Connack.h"
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct ConnackFields
 {
     /// @brief Definition of <b>"Flags"</b> field.
@@ -58,19 +59,36 @@ struct ConnackFields
             return "Flags";
         }
         
+        /// @brief Retrieve name of the bit
+        static const char* bitName(BitIdx idx)
+        {
+            static const char* Map[] = {
+                "Session Present"
+            };
+        
+            static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+            static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
+        
+            if (MapSize <= static_cast<std::size_t>(idx)) {
+                return nullptr;
+            }
+        
+            return Map[static_cast<std::size_t>(idx)];
+        }
+        
     };
     
     /// @brief Definition of <b>"Reason Code"</b> field.
     using ReasonCode =
         mqtt5::field::ReasonCode<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief Definition of <b>"Properties"</b> field.
     using PropertiesList =
         mqtt5::field::PropertiesList<
-           TOpt
-       >;
+            TOpt
+        >;
     
     /// @brief All the fields bundled in std::tuple.
     using All = std::tuple<
@@ -86,7 +104,7 @@ struct ConnackFields
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
 /// @headerfile "mqtt5/message/Connack.h"
-template <typename TMsgBase, typename TOpt = mqtt5::DefaultOptions>
+template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Connack : public
     comms::MessageBase<
         TMsgBase,

@@ -3,11 +3,14 @@
 
 #pragma once
 
+#include <algorithm>
 #include <cstdint>
+#include <iterator>
+#include <utility>
 #include "comms/field/EnumValue.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/field/FieldBase.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -70,7 +73,7 @@ enum class ReasonCodeVal : std::uint8_t
 /// @see @ref mqtt5::field::ReasonCodeVal
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
-template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
+template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
 struct ReasonCode : public
     comms::field::EnumValue<
         mqtt5::field::FieldBase<>,
@@ -87,6 +90,70 @@ struct ReasonCode : public
     static const char* name()
     {
         return "Reason Code";
+    }
+    
+    /// @brief Retrieve name of the enum value
+    static const char* valueName(ReasonCodeVal val)
+    {
+        using NameInfo = std::pair<ReasonCodeVal, const char*>;
+        static const NameInfo Map[] = {
+            std::make_pair(ReasonCodeVal::Success, "Success"),
+            std::make_pair(ReasonCodeVal::GrantedQos1, "Granted QoS1"),
+            std::make_pair(ReasonCodeVal::GrantedQos2, "Granted QoS2"),
+            std::make_pair(ReasonCodeVal::DisconnectWithWill, "Disconnect w/ Will"),
+            std::make_pair(ReasonCodeVal::NoMatchingSubscribers, "No Matching Subscribers"),
+            std::make_pair(ReasonCodeVal::NoSubscriptionExisted, "No Subscription Existed"),
+            std::make_pair(ReasonCodeVal::ContinueAuth, "Continue authentication"),
+            std::make_pair(ReasonCodeVal::ReAuth, "Re-authenticate"),
+            std::make_pair(ReasonCodeVal::UnspecifiedError, "Unspecified error"),
+            std::make_pair(ReasonCodeVal::MalformedPacket, "Malformed Packet"),
+            std::make_pair(ReasonCodeVal::ProtocolError, "Protocol Error"),
+            std::make_pair(ReasonCodeVal::ImplSpecificError, "Impl. Specific Error"),
+            std::make_pair(ReasonCodeVal::UnsupportedVersion, "Unsupported Version"),
+            std::make_pair(ReasonCodeVal::ClientIdInvalid, "Client ID Invalid"),
+            std::make_pair(ReasonCodeVal::BadUserPassword, "Bad Username/Password"),
+            std::make_pair(ReasonCodeVal::NotAuthorized, "Not authorized"),
+            std::make_pair(ReasonCodeVal::ServerUnavailable, "Server unavailable"),
+            std::make_pair(ReasonCodeVal::ServerBusy, "Server busy"),
+            std::make_pair(ReasonCodeVal::Banned, "Banned"),
+            std::make_pair(ReasonCodeVal::ServerShuttingDown, "Server shutting down"),
+            std::make_pair(ReasonCodeVal::BadAuthMethod, "Bad auth method"),
+            std::make_pair(ReasonCodeVal::KeepAliveTimeout, "Keep Alive timeout"),
+            std::make_pair(ReasonCodeVal::SessionTakenOver, "Session taken over"),
+            std::make_pair(ReasonCodeVal::TopicFilterInvalid, "Topic Filter invalid"),
+            std::make_pair(ReasonCodeVal::TopicNameInvalid, "Topic Name invalid"),
+            std::make_pair(ReasonCodeVal::PacketIdInUse, "Packet ID in use"),
+            std::make_pair(ReasonCodeVal::PacketIdNotFound, "Packet ID not found"),
+            std::make_pair(ReasonCodeVal::ReceiveMaxExceeded, "Receive Max exceeded"),
+            std::make_pair(ReasonCodeVal::TopicAliasInvalid, "Topic Alias invalid"),
+            std::make_pair(ReasonCodeVal::PacketTooLarge, "Packet too large"),
+            std::make_pair(ReasonCodeVal::MsgRateTooHigh, "Message rate too high"),
+            std::make_pair(ReasonCodeVal::QuotaExceeded, "Quota exceeded"),
+            std::make_pair(ReasonCodeVal::AdministrativeAction, "Administrative action"),
+            std::make_pair(ReasonCodeVal::PayloadFormatInvalid, "Payload format invalid"),
+            std::make_pair(ReasonCodeVal::RetainNotSupported, "Retain not supported"),
+            std::make_pair(ReasonCodeVal::QosNotSupported, "QoS not supported"),
+            std::make_pair(ReasonCodeVal::UseAnotherServer, "Use another server"),
+            std::make_pair(ReasonCodeVal::ServerMoved, "Server moved"),
+            std::make_pair(ReasonCodeVal::SharedSubNotSuppored, "Shared Sub not supported"),
+            std::make_pair(ReasonCodeVal::ConnectionRateExceeded, "Connection rate exceeded"),
+            std::make_pair(ReasonCodeVal::MaxConnectTime, "Maximum connect time"),
+            std::make_pair(ReasonCodeVal::SubIdsNotSupported, "Sub IDs not supported"),
+            std::make_pair(ReasonCodeVal::WildcardSubsNotSupported, "Wildcard Subs not supported")
+        };
+        
+        auto iter = std::lower_bound(
+            std::begin(Map), std::end(Map), val,
+            [](const NameInfo& info, ReasonCodeVal v) -> bool
+            {
+                return info.first < v;
+            });
+        
+        if ((iter == std::end(Map)) || (iter->first != val)) {
+            return nullptr;
+        }
+        
+        return iter->second;
     }
     
 };

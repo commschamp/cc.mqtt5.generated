@@ -1,30 +1,39 @@
 /// @file
-/// @brief Contains definition of protocol default options.
+/// @brief Contains definition of protocol default options for bare-metal application
+///    where usage of dynamic memory allocation is disabled.
 
 #pragma once
 
-#include "comms/options.h"
+#ifndef DEFAULT_SEQ_FIXED_STORAGE_SIZE
+/// @brief Define default fixed size for various sequence fields
+/// @details May be defined during compile time to change the default value.
+#define DEFAULT_SEQ_FIXED_STORAGE_SIZE 32
+#endif
 
 namespace mqtt5
 {
 
-/// @brief Default (empty) options of the protocol.
-struct DefaultOptions
+namespace options
+{
+
+/// @brief Default options for bare-metal application where usage of dynamic
+///    memory allocation is diabled.
+struct BareMetalDefaultOptions
 {
     /// @brief Extra options for fields.
     struct field
     {
         /// @brief Extra options for @ref mqtt5::field::BinData field.
-        using BinData = comms::option::EmptyOption;
+        using BinData = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
         
         /// @brief Extra options for @ref mqtt5::field::PropertiesList field.
-        using PropertiesList = comms::option::EmptyOption;
+        using PropertiesList = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
         
         /// @brief Extra options for @ref mqtt5::field::ProtocolName field.
-        using ProtocolName = comms::option::EmptyOption;
+        using ProtocolName = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
         
         /// @brief Extra options for @ref mqtt5::field::String field.
-        using String = comms::option::EmptyOption;
+        using String = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
         
     }; // struct field
     
@@ -47,7 +56,7 @@ struct DefaultOptions
         struct PublishFields
         {
             /// @brief Extra options for @ref mqtt5::message::PublishFields::Payload field.
-            using Payload = comms::option::EmptyOption;
+            using Payload = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
             
         }; // struct PublishFields
         
@@ -56,7 +65,7 @@ struct DefaultOptions
         struct SubackFields
         {
             /// @brief Extra options for @ref mqtt5::message::SubackFields::List field.
-            using List = comms::option::EmptyOption;
+            using List = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
             
         }; // struct SubackFields
         
@@ -67,7 +76,7 @@ struct DefaultOptions
         struct SubscribeFields
         {
             /// @brief Extra options for @ref mqtt5::message::SubscribeFields::List field.
-            using List = comms::option::EmptyOption;
+            using List = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
             
         }; // struct SubscribeFields
         
@@ -78,7 +87,7 @@ struct DefaultOptions
         struct UnsubackFields
         {
             /// @brief Extra options for @ref mqtt5::message::UnsubackFields::List field.
-            using List = comms::option::EmptyOption;
+            using List = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
             
         }; // struct UnsubackFields
         
@@ -89,7 +98,7 @@ struct DefaultOptions
         struct UnsubscribeFields
         {
             /// @brief Extra options for @ref mqtt5::message::UnsubscribeFields::List field.
-            using List = comms::option::EmptyOption;
+            using List = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>;
             
         }; // struct UnsubscribeFields
         
@@ -105,7 +114,7 @@ struct DefaultOptions
         struct FrameLayers
         {
             /// @brief Extra options for @ref mqtt5::frame::FrameLayers::Data layer.
-            using Data = comms::option::EmptyOption;
+            using Data = comms::option::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE * 8>;
             
             /// @brief Extra options for @ref mqtt5::frame::FrameLayers::IdAndFlags layer.
             using IdAndFlags = comms::option::EmptyOption;
@@ -116,6 +125,8 @@ struct DefaultOptions
     
     
 };
+
+} // namespace options
 
 } // namespace mqtt5
 

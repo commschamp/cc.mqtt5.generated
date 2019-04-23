@@ -7,9 +7,9 @@
 #include "comms/field/ArrayList.h"
 #include "comms/field/IntValue.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/field/FieldBase.h"
 #include "mqtt5/field/Property.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -19,7 +19,7 @@ namespace field
 
 /// @brief Scope for all the member fields of @ref PropertiesList list.
 /// @tparam TOpt Protocol options.
-template <typename TOpt = mqtt5::DefaultOptions>
+template <typename TOpt = mqtt5::options::DefaultOptions>
 struct PropertiesListMembers
 {
     /// @brief Definition of <b>"Length"</b> field.
@@ -43,7 +43,7 @@ struct PropertiesListMembers
 /// @brief Definition of <b>"Properties"</b> field.
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
-template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
+template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
 struct PropertiesList : public
     comms::field::ArrayList<
         mqtt5::field::FieldBase<>,

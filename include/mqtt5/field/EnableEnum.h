@@ -4,10 +4,11 @@
 #pragma once
 
 #include <cstdint>
+#include <type_traits>
 #include "comms/field/EnumValue.h"
 #include "comms/options.h"
-#include "mqtt5/DefaultOptions.h"
 #include "mqtt5/field/FieldBase.h"
+#include "mqtt5/options/DefaultOptions.h"
 
 namespace mqtt5
 {
@@ -27,7 +28,7 @@ enum class EnableEnumVal : std::uint8_t
 /// @see @ref mqtt5::field::EnableEnumVal
 /// @tparam TOpt Protocol options.
 /// @tparam TExtraOpts Extra options.
-template <typename TOpt = mqtt5::DefaultOptions, typename... TExtraOpts>
+template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
 struct EnableEnum : public
     comms::field::EnumValue<
         mqtt5::field::FieldBase<>,
@@ -40,6 +41,22 @@ struct EnableEnum : public
     static const char* name()
     {
         return "EnableEnum";
+    }
+    
+    /// @brief Retrieve name of the enum value
+    static const char* valueName(EnableEnumVal val)
+    {
+        static const char* Map[] = {
+            "Disabled",
+            "Enabled"
+        };
+        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+        
+        if (MapSize <= static_cast<std::size_t>(val)) {
+            return nullptr;
+        }
+        
+        return Map[static_cast<std::size_t>(val)];
     }
     
 };

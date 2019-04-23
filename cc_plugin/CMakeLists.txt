@@ -5,16 +5,16 @@ set (ALL_MESSAGES_LIB "all_messages")
 function (cc_plugin_all_messages)
     set (name "${ALL_MESSAGES_LIB}")
     set (src
-        field/BinData.cpp
-        field/EnableEnum.cpp
         field/Length.cpp
         field/PacketId.cpp
+        field/BinData.cpp
+        field/EnableEnum.cpp
         field/PropertiesList.cpp
         field/Property.cpp
+        field/Topic.cpp
         field/ProtocolName.cpp
         field/ReasonCode.cpp
         field/String.cpp
-        field/Topic.cpp
         field/VarLenInt.cpp
         Message.cpp
         message/Auth.cpp
@@ -45,7 +45,7 @@ function (cc_plugin_all_messages)
         endif()
     endif ()
 
-    if (OPT_FULL_SOLUTION)
+    if (TARGET ${CC_EXTERNAL_TGT})
         add_dependencies(${name} ${CC_EXTERNAL_TGT})
     endif ()
 endfunction()
@@ -122,7 +122,7 @@ cc_plugin_all_messages()
 
 cc_plugin ("Mqtt5")
 
-if (OPT_FULL_SOLUTION)
+if (TARGET ${CC_EXTERNAL_TGT})
     install (
         FILES plugin/Mqtt5.cfg
         DESTINATION ${CONFIG_INSTALL_DIR}

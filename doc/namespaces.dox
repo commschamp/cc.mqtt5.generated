@@ -16,3 +16,9 @@
 /// @namespace mqtt5::frame::checksum
 /// @brief Main namespace for the custom frame layers.
 
+/// @namespace mqtt5::options
+/// @brief Main namespace for the various protocol options.
+
+/// @namespace mqtt5::input
+/// @brief Main namespace for hold input messages bundles.
+
