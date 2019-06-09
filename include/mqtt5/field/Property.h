@@ -38,8 +38,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<1U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<1>,
                 comms::option::ValidNumValue<1>
             >
         {
@@ -143,8 +143,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<2U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<2>,
                 comms::option::ValidNumValue<2>
             >
         {
@@ -223,8 +223,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<3U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<3>,
                 comms::option::ValidNumValue<3>
             >
         {
@@ -301,8 +301,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<8U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<8>,
                 comms::option::ValidNumValue<8>
             >
         {
@@ -379,8 +379,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<9U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<9>,
                 comms::option::ValidNumValue<9>
             >
         {
@@ -457,8 +457,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<11U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<11>,
                 comms::option::ValidNumValue<11>
             >
         {
@@ -535,8 +535,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<17U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<17>,
                 comms::option::ValidNumValue<17>
             >
         {
@@ -615,8 +615,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<18U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<18>,
                 comms::option::ValidNumValue<18>
             >
         {
@@ -693,8 +693,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<19U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<19>,
                 comms::option::ValidNumValue<19>
             >
         {
@@ -773,8 +773,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<21U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<21>,
                 comms::option::ValidNumValue<21>
             >
         {
@@ -851,8 +851,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<22U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<22>,
                 comms::option::ValidNumValue<22>
             >
         {
@@ -929,8 +929,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<23U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<23>,
                 comms::option::ValidNumValue<23>
             >
         {
@@ -1007,8 +1007,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<24U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<24>,
                 comms::option::ValidNumValue<24>
             >
         {
@@ -1087,8 +1087,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<25U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<25>,
                 comms::option::ValidNumValue<25>
             >
         {
@@ -1165,8 +1165,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<26U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<26>,
                 comms::option::ValidNumValue<26>
             >
         {
@@ -1243,8 +1243,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<28U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<28>,
                 comms::option::ValidNumValue<28>
             >
         {
@@ -1321,8 +1321,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<31U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<31>,
                 comms::option::ValidNumValue<31>
             >
         {
@@ -1399,8 +1399,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<33U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<33>,
                 comms::option::ValidNumValue<33>
             >
         {
@@ -1480,8 +1480,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<34U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<34>,
                 comms::option::ValidNumValue<34>
             >
         {
@@ -1559,8 +1559,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<36U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<36>,
                 comms::option::ValidNumValue<36>
             >
         {
@@ -1664,8 +1664,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<37U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<37>,
                 comms::option::ValidNumValue<37>
             >
         {
@@ -1742,9 +1742,9 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<37U>,
                 comms::option::VarLength<1U, 4U>,
-                comms::option::ValidNumValue<37>
+                comms::option::DefaultNumValue<38>,
+                comms::option::ValidNumValue<38>
             >
         {
             /// @brief Name of the field.
@@ -1879,8 +1879,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<39U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<39>,
                 comms::option::ValidNumValue<39>
             >
         {
@@ -1958,8 +1958,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<40U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<40>,
                 comms::option::ValidNumValue<40>
             >
         {
@@ -2036,8 +2036,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<41U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<41>,
                 comms::option::ValidNumValue<41>
             >
         {
@@ -2114,8 +2114,8 @@ struct PropertyMembers
                 mqtt5::field::FieldBase<comms::option::LittleEndian>,
                 std::uint32_t,
                 comms::option::FailOnInvalid<>,
-                comms::option::DefaultBigUnsignedNumValue<42U>,
                 comms::option::VarLength<1U, 4U>,
+                comms::option::DefaultNumValue<42>,
                 comms::option::ValidNumValue<42>
             >
         {
@@ -2223,14 +2223,16 @@ class Property : public
     comms::field::Variant<
         mqtt5::field::FieldBase<>,
         typename PropertyMembers<TOpt>::All,
-        TExtraOpts...
+        TExtraOpts...,
+        comms::option::HasCustomRead
     >
 {
     using Base = 
         comms::field::Variant<
             mqtt5::field::FieldBase<>,
             typename PropertyMembers<TOpt>::All,
-            TExtraOpts...
+            TExtraOpts...,
+            comms::option::HasCustomRead
         >;
 public:
     /// @brief Allow access to internal fields.
@@ -2239,32 +2241,32 @@ public:
     ///     for details.
     ///
     ///     The generated access functions are:
-    ///     @li @b initField_payloadFormatIndicator() and @b accessField_payloadFormatIndicator - for PropertyMembers::PayloadFormatIndicator member field.
-    ///     @li @b initField_messageExpiryInterval() and @b accessField_messageExpiryInterval - for PropertyMembers::MessageExpiryInterval member field.
-    ///     @li @b initField_contentType() and @b accessField_contentType - for PropertyMembers::ContentType member field.
-    ///     @li @b initField_responseTopic() and @b accessField_responseTopic - for PropertyMembers::ResponseTopic member field.
-    ///     @li @b initField_correlationData() and @b accessField_correlationData - for PropertyMembers::CorrelationData member field.
-    ///     @li @b initField_subscriptionId() and @b accessField_subscriptionId - for PropertyMembers::SubscriptionId member field.
-    ///     @li @b initField_sessionExpiryInterval() and @b accessField_sessionExpiryInterval - for PropertyMembers::SessionExpiryInterval member field.
-    ///     @li @b initField_assignedClientId() and @b accessField_assignedClientId - for PropertyMembers::AssignedClientId member field.
-    ///     @li @b initField_serverKeepAlive() and @b accessField_serverKeepAlive - for PropertyMembers::ServerKeepAlive member field.
-    ///     @li @b initField_authMethod() and @b accessField_authMethod - for PropertyMembers::AuthMethod member field.
-    ///     @li @b initField_authData() and @b accessField_authData - for PropertyMembers::AuthData member field.
-    ///     @li @b initField_requestProblemInfo() and @b accessField_requestProblemInfo - for PropertyMembers::RequestProblemInfo member field.
-    ///     @li @b initField_willDelayInterval() and @b accessField_willDelayInterval - for PropertyMembers::WillDelayInterval member field.
-    ///     @li @b initField_requestResponseInfo() and @b accessField_requestResponseInfo - for PropertyMembers::RequestResponseInfo member field.
-    ///     @li @b initField_responseInfo() and @b accessField_responseInfo - for PropertyMembers::ResponseInfo member field.
-    ///     @li @b initField_serverRef() and @b accessField_serverRef - for PropertyMembers::ServerRef member field.
-    ///     @li @b initField_reasonStr() and @b accessField_reasonStr - for PropertyMembers::ReasonStr member field.
-    ///     @li @b initField_receiveMax() and @b accessField_receiveMax - for PropertyMembers::ReceiveMax member field.
-    ///     @li @b initField_topicAliasMax() and @b accessField_topicAliasMax - for PropertyMembers::TopicAliasMax member field.
-    ///     @li @b initField_maxQos() and @b accessField_maxQos - for PropertyMembers::MaxQos member field.
-    ///     @li @b initField_retainAvailable() and @b accessField_retainAvailable - for PropertyMembers::RetainAvailable member field.
-    ///     @li @b initField_userProperty() and @b accessField_userProperty - for PropertyMembers::UserProperty member field.
-    ///     @li @b initField_maxPacketSize() and @b accessField_maxPacketSize - for PropertyMembers::MaxPacketSize member field.
-    ///     @li @b initField_wildcardSubAvail() and @b accessField_wildcardSubAvail - for PropertyMembers::WildcardSubAvail member field.
-    ///     @li @b initField_subIdAvail() and @b accessField_subIdAvail - for PropertyMembers::SubIdAvail member field.
-    ///     @li @b initField_sharedSubAvail() and @b accessField_sharedSubAvail - for PropertyMembers::SharedSubAvail member field.
+    ///     @li @b initField_payloadFormatIndicator() and @b accessField_payloadFormatIndicator() - for PropertyMembers::PayloadFormatIndicator member field.
+    ///     @li @b initField_messageExpiryInterval() and @b accessField_messageExpiryInterval() - for PropertyMembers::MessageExpiryInterval member field.
+    ///     @li @b initField_contentType() and @b accessField_contentType() - for PropertyMembers::ContentType member field.
+    ///     @li @b initField_responseTopic() and @b accessField_responseTopic() - for PropertyMembers::ResponseTopic member field.
+    ///     @li @b initField_correlationData() and @b accessField_correlationData() - for PropertyMembers::CorrelationData member field.
+    ///     @li @b initField_subscriptionId() and @b accessField_subscriptionId() - for PropertyMembers::SubscriptionId member field.
+    ///     @li @b initField_sessionExpiryInterval() and @b accessField_sessionExpiryInterval() - for PropertyMembers::SessionExpiryInterval member field.
+    ///     @li @b initField_assignedClientId() and @b accessField_assignedClientId() - for PropertyMembers::AssignedClientId member field.
+    ///     @li @b initField_serverKeepAlive() and @b accessField_serverKeepAlive() - for PropertyMembers::ServerKeepAlive member field.
+    ///     @li @b initField_authMethod() and @b accessField_authMethod() - for PropertyMembers::AuthMethod member field.
+    ///     @li @b initField_authData() and @b accessField_authData() - for PropertyMembers::AuthData member field.
+    ///     @li @b initField_requestProblemInfo() and @b accessField_requestProblemInfo() - for PropertyMembers::RequestProblemInfo member field.
+    ///     @li @b initField_willDelayInterval() and @b accessField_willDelayInterval() - for PropertyMembers::WillDelayInterval member field.
+    ///     @li @b initField_requestResponseInfo() and @b accessField_requestResponseInfo() - for PropertyMembers::RequestResponseInfo member field.
+    ///     @li @b initField_responseInfo() and @b accessField_responseInfo() - for PropertyMembers::ResponseInfo member field.
+    ///     @li @b initField_serverRef() and @b accessField_serverRef() - for PropertyMembers::ServerRef member field.
+    ///     @li @b initField_reasonStr() and @b accessField_reasonStr() - for PropertyMembers::ReasonStr member field.
+    ///     @li @b initField_receiveMax() and @b accessField_receiveMax() - for PropertyMembers::ReceiveMax member field.
+    ///     @li @b initField_topicAliasMax() and @b accessField_topicAliasMax() - for PropertyMembers::TopicAliasMax member field.
+    ///     @li @b initField_maxQos() and @b accessField_maxQos() - for PropertyMembers::MaxQos member field.
+    ///     @li @b initField_retainAvailable() and @b accessField_retainAvailable() - for PropertyMembers::RetainAvailable member field.
+    ///     @li @b initField_userProperty() and @b accessField_userProperty() - for PropertyMembers::UserProperty member field.
+    ///     @li @b initField_maxPacketSize() and @b accessField_maxPacketSize() - for PropertyMembers::MaxPacketSize member field.
+    ///     @li @b initField_wildcardSubAvail() and @b accessField_wildcardSubAvail() - for PropertyMembers::WildcardSubAvail member field.
+    ///     @li @b initField_subIdAvail() and @b accessField_subIdAvail() - for PropertyMembers::SubIdAvail member field.
+    ///     @li @b initField_sharedSubAvail() and @b accessField_sharedSubAvail() - for PropertyMembers::SharedSubAvail member field.
     COMMS_VARIANT_MEMBERS_ACCESS(
         payloadFormatIndicator,
         messageExpiryInterval,
@@ -2298,6 +2300,190 @@ public:
     static const char* name()
     {
         return "";
+    }
+    
+    /// @brief Optimized read functionality.
+    template <typename TIter>
+    comms::ErrorStatus read(TIter& iter, std::size_t len)
+    {
+        using CommonKeyField=
+            comms::field::IntValue<
+                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                std::uint32_t,
+                comms::option::VarLength<1U, 4U>
+            >;
+        CommonKeyField commonKeyField;
+        auto origIter = iter;
+        auto es = commonKeyField.read(iter, len);
+        if (es != comms::ErrorStatus::Success) {
+            return es;
+        }
+    
+        auto consumedLen = static_cast<std::size_t>(std::distance(origIter, iter));
+        COMMS_ASSERT(consumedLen <= len);
+        len -= consumedLen;
+    
+        switch (commonKeyField.value()) {
+        case 1U:
+            {
+                auto& field_payloadFormatIndicator = initField_payloadFormatIndicator();
+                COMMS_ASSERT(field_payloadFormatIndicator.field_id().value() == commonKeyField.value());
+                return field_payloadFormatIndicator.template readFrom<1>(iter, len);
+            }
+        case 2U:
+            {
+                auto& field_messageExpiryInterval = initField_messageExpiryInterval();
+                COMMS_ASSERT(field_messageExpiryInterval.field_id().value() == commonKeyField.value());
+                return field_messageExpiryInterval.template readFrom<1>(iter, len);
+            }
+        case 3U:
+            {
+                auto& field_contentType = initField_contentType();
+                COMMS_ASSERT(field_contentType.field_id().value() == commonKeyField.value());
+                return field_contentType.template readFrom<1>(iter, len);
+            }
+        case 8U:
+            {
+                auto& field_responseTopic = initField_responseTopic();
+                COMMS_ASSERT(field_responseTopic.field_id().value() == commonKeyField.value());
+                return field_responseTopic.template readFrom<1>(iter, len);
+            }
+        case 9U:
+            {
+                auto& field_correlationData = initField_correlationData();
+                COMMS_ASSERT(field_correlationData.field_id().value() == commonKeyField.value());
+                return field_correlationData.template readFrom<1>(iter, len);
+            }
+        case 11U:
+            {
+                auto& field_subscriptionId = initField_subscriptionId();
+                COMMS_ASSERT(field_subscriptionId.field_id().value() == commonKeyField.value());
+                return field_subscriptionId.template readFrom<1>(iter, len);
+            }
+        case 17U:
+            {
+                auto& field_sessionExpiryInterval = initField_sessionExpiryInterval();
+                COMMS_ASSERT(field_sessionExpiryInterval.field_id().value() == commonKeyField.value());
+                return field_sessionExpiryInterval.template readFrom<1>(iter, len);
+            }
+        case 18U:
+            {
+                auto& field_assignedClientId = initField_assignedClientId();
+                COMMS_ASSERT(field_assignedClientId.field_id().value() == commonKeyField.value());
+                return field_assignedClientId.template readFrom<1>(iter, len);
+            }
+        case 19U:
+            {
+                auto& field_serverKeepAlive = initField_serverKeepAlive();
+                COMMS_ASSERT(field_serverKeepAlive.field_id().value() == commonKeyField.value());
+                return field_serverKeepAlive.template readFrom<1>(iter, len);
+            }
+        case 21U:
+            {
+                auto& field_authMethod = initField_authMethod();
+                COMMS_ASSERT(field_authMethod.field_id().value() == commonKeyField.value());
+                return field_authMethod.template readFrom<1>(iter, len);
+            }
+        case 22U:
+            {
+                auto& field_authData = initField_authData();
+                COMMS_ASSERT(field_authData.field_id().value() == commonKeyField.value());
+                return field_authData.template readFrom<1>(iter, len);
+            }
+        case 23U:
+            {
+                auto& field_requestProblemInfo = initField_requestProblemInfo();
+                COMMS_ASSERT(field_requestProblemInfo.field_id().value() == commonKeyField.value());
+                return field_requestProblemInfo.template readFrom<1>(iter, len);
+            }
+        case 24U:
+            {
+                auto& field_willDelayInterval = initField_willDelayInterval();
+                COMMS_ASSERT(field_willDelayInterval.field_id().value() == commonKeyField.value());
+                return field_willDelayInterval.template readFrom<1>(iter, len);
+            }
+        case 25U:
+            {
+                auto& field_requestResponseInfo = initField_requestResponseInfo();
+                COMMS_ASSERT(field_requestResponseInfo.field_id().value() == commonKeyField.value());
+                return field_requestResponseInfo.template readFrom<1>(iter, len);
+            }
+        case 26U:
+            {
+                auto& field_responseInfo = initField_responseInfo();
+                COMMS_ASSERT(field_responseInfo.field_id().value() == commonKeyField.value());
+                return field_responseInfo.template readFrom<1>(iter, len);
+            }
+        case 28U:
+            {
+                auto& field_serverRef = initField_serverRef();
+                COMMS_ASSERT(field_serverRef.field_id().value() == commonKeyField.value());
+                return field_serverRef.template readFrom<1>(iter, len);
+            }
+        case 31U:
+            {
+                auto& field_reasonStr = initField_reasonStr();
+                COMMS_ASSERT(field_reasonStr.field_id().value() == commonKeyField.value());
+                return field_reasonStr.template readFrom<1>(iter, len);
+            }
+        case 33U:
+            {
+                auto& field_receiveMax = initField_receiveMax();
+                COMMS_ASSERT(field_receiveMax.field_id().value() == commonKeyField.value());
+                return field_receiveMax.template readFrom<1>(iter, len);
+            }
+        case 34U:
+            {
+                auto& field_topicAliasMax = initField_topicAliasMax();
+                COMMS_ASSERT(field_topicAliasMax.field_id().value() == commonKeyField.value());
+                return field_topicAliasMax.template readFrom<1>(iter, len);
+            }
+        case 36U:
+            {
+                auto& field_maxQos = initField_maxQos();
+                COMMS_ASSERT(field_maxQos.field_id().value() == commonKeyField.value());
+                return field_maxQos.template readFrom<1>(iter, len);
+            }
+        case 37U:
+            {
+                auto& field_retainAvailable = initField_retainAvailable();
+                COMMS_ASSERT(field_retainAvailable.field_id().value() == commonKeyField.value());
+                return field_retainAvailable.template readFrom<1>(iter, len);
+            }
+        case 38U:
+            {
+                auto& field_userProperty = initField_userProperty();
+                COMMS_ASSERT(field_userProperty.field_id().value() == commonKeyField.value());
+                return field_userProperty.template readFrom<1>(iter, len);
+            }
+        case 39U:
+            {
+                auto& field_maxPacketSize = initField_maxPacketSize();
+                COMMS_ASSERT(field_maxPacketSize.field_id().value() == commonKeyField.value());
+                return field_maxPacketSize.template readFrom<1>(iter, len);
+            }
+        case 40U:
+            {
+                auto& field_wildcardSubAvail = initField_wildcardSubAvail();
+                COMMS_ASSERT(field_wildcardSubAvail.field_id().value() == commonKeyField.value());
+                return field_wildcardSubAvail.template readFrom<1>(iter, len);
+            }
+        case 41U:
+            {
+                auto& field_subIdAvail = initField_subIdAvail();
+                COMMS_ASSERT(field_subIdAvail.field_id().value() == commonKeyField.value());
+                return field_subIdAvail.template readFrom<1>(iter, len);
+            }
+        case 42U:
+            {
+                auto& field_sharedSubAvail = initField_sharedSubAvail();
+                COMMS_ASSERT(field_sharedSubAvail.field_id().value() == commonKeyField.value());
+                return field_sharedSubAvail.template readFrom<1>(iter, len);
+            }
+        default:
+            break;
+        };
+        return comms::ErrorStatus::InvalidMsgData;
     }
     
 };

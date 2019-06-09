@@ -9,10 +9,12 @@ function (cc_plugin_all_messages)
         field/PacketId.cpp
         field/BinData.cpp
         field/EnableEnum.cpp
+        field/MsgId.cpp
         field/PropertiesList.cpp
         field/Property.cpp
         field/Topic.cpp
         field/ProtocolName.cpp
+        field/Qos.cpp
         field/ReasonCode.cpp
         field/String.cpp
         field/VarLenInt.cpp
