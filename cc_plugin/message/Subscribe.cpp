@@ -3,6 +3,7 @@
 #include "comms_champion/property/field.h"
 #include "cc_plugin/field/PacketId.h"
 #include "cc_plugin/field/PropertiesList.h"
+#include "cc_plugin/field/Qos.h"
 #include "cc_plugin/field/Topic.h"
 
 namespace cc = comms_champion;
@@ -49,14 +50,7 @@ struct ListMembers
             static QVariantMap createProps_qos()
             {
                 using Field = mqtt5::message::SubscribeFields<>::ListMembers::ElementMembers::OptionsMembers::Qos;
-                return
-                    cc::property::field::ForField<Field>()
-                        .name(Field::name())
-                        .serialisedHidden()
-                        .add("AtMostOnceDelivery", 0)
-                        .add("AtLeastOnceDelivery", 1)
-                        .add("ExactlyOnceDelivery", 2)
-                        .asMap();
+                return cc_plugin::field::createProps_qos(Field::name(), true);
                 
             }
             
