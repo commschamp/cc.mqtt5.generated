@@ -79,11 +79,11 @@ struct ReasonCode : public
         mqtt5::field::FieldBase<>,
         ReasonCodeVal,
         TExtraOpts...,
-        comms::option::ValidNumValueRange<0, 2>,
-        comms::option::ValidNumValue<4>,
-        comms::option::ValidNumValueRange<16, 17>,
-        comms::option::ValidNumValueRange<24, 25>,
-        comms::option::ValidNumValueRange<128, 162>
+        comms::option::def::ValidNumValueRange<0, 2>,
+        comms::option::def::ValidNumValue<4>,
+        comms::option::def::ValidNumValueRange<16, 17>,
+        comms::option::def::ValidNumValueRange<24, 25>,
+        comms::option::def::ValidNumValueRange<128, 162>
     >
 {
     /// @brief Name of the field.

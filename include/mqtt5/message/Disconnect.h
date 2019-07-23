@@ -54,20 +54,20 @@ template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Disconnect : public
     comms::MessageBase<
         TMsgBase,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Disconnect>,
-        comms::option::FieldsImpl<typename DisconnectFields<TOpt>::All>,
-        comms::option::MsgType<Disconnect<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Disconnect>,
+        comms::option::def::FieldsImpl<typename DisconnectFields<TOpt>::All>,
+        comms::option::def::MsgType<Disconnect<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
     using Base =
         comms::MessageBase<
             TMsgBase,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Disconnect>,
-            comms::option::FieldsImpl<typename DisconnectFields<TOpt>::All>,
-            comms::option::MsgType<Disconnect<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Disconnect>,
+            comms::option::def::FieldsImpl<typename DisconnectFields<TOpt>::All>,
+            comms::option::def::MsgType<Disconnect<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

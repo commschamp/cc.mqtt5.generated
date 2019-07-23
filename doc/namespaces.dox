@@ -22,3 +22,6 @@
 /// @namespace mqtt5::input
 /// @brief Main namespace for hold input messages bundles.
 
+/// @namespace mqtt5::dispatch
+/// @brief Main namespace for the various message dispatch functions.
+

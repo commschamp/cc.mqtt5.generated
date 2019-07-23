@@ -24,7 +24,7 @@ struct String : public
         mqtt5::field::FieldBase<>,
         TExtraOpts...,
         typename TOpt::field::String,
-        comms::option::SequenceSerLengthFieldPrefix<mqtt5::field::Length<TOpt> >
+        comms::option::def::SequenceSerLengthFieldPrefix<mqtt5::field::Length<TOpt> >
     >
 {
     /// @brief Name of the field.

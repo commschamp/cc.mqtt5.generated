@@ -66,20 +66,20 @@ struct SubscribeFields
                 using Qos =
                     mqtt5::field::Qos<
                         TOpt,
-                        comms::option::FixedBitLength<2U>
+                        comms::option::def::FixedBitLength<2U>
                     >;
                 
                 /// @brief Definition of <b>""</b> field.
                 class Bits : public
                     comms::field::BitmaskValue<
                         mqtt5::field::FieldBase<>,
-                        comms::option::FixedBitLength<2U>
+                        comms::option::def::FixedBitLength<2U>
                     >
                 {
                     using Base = 
                         comms::field::BitmaskValue<
                             mqtt5::field::FieldBase<>,
-                            comms::option::FixedBitLength<2U>
+                            comms::option::def::FixedBitLength<2U>
                         >;
                 public:
                     /// @brief Provides names and generates access functions for internal bits.
@@ -136,8 +136,8 @@ struct SubscribeFields
                     comms::field::EnumValue<
                         mqtt5::field::FieldBase<>,
                         RetainHandlingVal,
-                        comms::option::FixedBitLength<2U>,
-                        comms::option::ValidNumValueRange<0, 2>
+                        comms::option::def::FixedBitLength<2U>,
+                        comms::option::def::ValidNumValueRange<0, 2>
                     >
                 {
                     /// @brief Name of the field.
@@ -170,8 +170,8 @@ struct SubscribeFields
                     comms::field::IntValue<
                         mqtt5::field::FieldBase<>,
                         std::uint8_t,
-                        comms::option::FixedBitLength<2U>,
-                        comms::option::ValidNumValue<0>
+                        comms::option::def::FixedBitLength<2U>,
+                        comms::option::def::ValidNumValue<0>
                     >
                 {
                     /// @brief Name of the field.
@@ -309,10 +309,10 @@ class Subscribe : public
     comms::MessageBase<
         TMsgBase,
         typename TOpt::message::Subscribe,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Subscribe>,
-        comms::option::FieldsImpl<typename SubscribeFields<TOpt>::All>,
-        comms::option::MsgType<Subscribe<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Subscribe>,
+        comms::option::def::FieldsImpl<typename SubscribeFields<TOpt>::All>,
+        comms::option::def::MsgType<Subscribe<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
@@ -320,10 +320,10 @@ class Subscribe : public
         comms::MessageBase<
             TMsgBase,
             typename TOpt::message::Subscribe,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Subscribe>,
-            comms::option::FieldsImpl<typename SubscribeFields<TOpt>::All>,
-            comms::option::MsgType<Subscribe<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Subscribe>,
+            comms::option::def::FieldsImpl<typename SubscribeFields<TOpt>::All>,
+            comms::option::def::MsgType<Subscribe<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

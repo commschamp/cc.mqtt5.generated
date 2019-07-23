@@ -35,12 +35,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<1>,
-                comms::option::ValidNumValue<1>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<1>,
+                comms::option::def::ValidNumValue<1>
             >
         {
             /// @brief Name of the field.
@@ -65,7 +65,7 @@ struct PropertyMembers
             comms::field::EnumValue<
                 mqtt5::field::FieldBase<>,
                 ValueVal,
-                comms::option::ValidNumValueRange<0, 1>
+                comms::option::def::ValidNumValueRange<0, 1>
             >
         {
             /// @brief Name of the field.
@@ -140,12 +140,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<2>,
-                comms::option::ValidNumValue<2>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<2>,
+                comms::option::def::ValidNumValue<2>
             >
         {
             /// @brief Name of the field.
@@ -161,7 +161,7 @@ struct PropertyMembers
             comms::field::IntValue<
                 mqtt5::field::FieldBase<>,
                 std::uint32_t,
-                comms::option::UnitsSeconds
+                comms::option::def::UnitsSeconds
             >
         {
             /// @brief Name of the field.
@@ -220,12 +220,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<3>,
-                comms::option::ValidNumValue<3>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<3>,
+                comms::option::def::ValidNumValue<3>
             >
         {
             /// @brief Name of the field.
@@ -298,12 +298,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<8>,
-                comms::option::ValidNumValue<8>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<8>,
+                comms::option::def::ValidNumValue<8>
             >
         {
             /// @brief Name of the field.
@@ -376,12 +376,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<9>,
-                comms::option::ValidNumValue<9>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<9>,
+                comms::option::def::ValidNumValue<9>
             >
         {
             /// @brief Name of the field.
@@ -454,12 +454,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<11>,
-                comms::option::ValidNumValue<11>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<11>,
+                comms::option::def::ValidNumValue<11>
             >
         {
             /// @brief Name of the field.
@@ -532,12 +532,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<17>,
-                comms::option::ValidNumValue<17>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<17>,
+                comms::option::def::ValidNumValue<17>
             >
         {
             /// @brief Name of the field.
@@ -553,7 +553,7 @@ struct PropertyMembers
             comms::field::IntValue<
                 mqtt5::field::FieldBase<>,
                 std::uint32_t,
-                comms::option::UnitsSeconds
+                comms::option::def::UnitsSeconds
             >
         {
             /// @brief Name of the field.
@@ -612,12 +612,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<18>,
-                comms::option::ValidNumValue<18>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<18>,
+                comms::option::def::ValidNumValue<18>
             >
         {
             /// @brief Name of the field.
@@ -690,12 +690,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<19>,
-                comms::option::ValidNumValue<19>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<19>,
+                comms::option::def::ValidNumValue<19>
             >
         {
             /// @brief Name of the field.
@@ -711,7 +711,7 @@ struct PropertyMembers
             comms::field::IntValue<
                 mqtt5::field::FieldBase<>,
                 std::uint16_t,
-                comms::option::UnitsSeconds
+                comms::option::def::UnitsSeconds
             >
         {
             /// @brief Name of the field.
@@ -770,12 +770,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<21>,
-                comms::option::ValidNumValue<21>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<21>,
+                comms::option::def::ValidNumValue<21>
             >
         {
             /// @brief Name of the field.
@@ -848,12 +848,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<22>,
-                comms::option::ValidNumValue<22>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<22>,
+                comms::option::def::ValidNumValue<22>
             >
         {
             /// @brief Name of the field.
@@ -926,12 +926,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<23>,
-                comms::option::ValidNumValue<23>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<23>,
+                comms::option::def::ValidNumValue<23>
             >
         {
             /// @brief Name of the field.
@@ -1004,12 +1004,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<24>,
-                comms::option::ValidNumValue<24>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<24>,
+                comms::option::def::ValidNumValue<24>
             >
         {
             /// @brief Name of the field.
@@ -1025,7 +1025,7 @@ struct PropertyMembers
             comms::field::IntValue<
                 mqtt5::field::FieldBase<>,
                 std::uint32_t,
-                comms::option::UnitsSeconds
+                comms::option::def::UnitsSeconds
             >
         {
             /// @brief Name of the field.
@@ -1084,12 +1084,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<25>,
-                comms::option::ValidNumValue<25>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<25>,
+                comms::option::def::ValidNumValue<25>
             >
         {
             /// @brief Name of the field.
@@ -1162,12 +1162,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<26>,
-                comms::option::ValidNumValue<26>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<26>,
+                comms::option::def::ValidNumValue<26>
             >
         {
             /// @brief Name of the field.
@@ -1240,12 +1240,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<28>,
-                comms::option::ValidNumValue<28>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<28>,
+                comms::option::def::ValidNumValue<28>
             >
         {
             /// @brief Name of the field.
@@ -1318,12 +1318,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<31>,
-                comms::option::ValidNumValue<31>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<31>,
+                comms::option::def::ValidNumValue<31>
             >
         {
             /// @brief Name of the field.
@@ -1396,12 +1396,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<33>,
-                comms::option::ValidNumValue<33>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<33>,
+                comms::option::def::ValidNumValue<33>
             >
         {
             /// @brief Name of the field.
@@ -1417,8 +1417,8 @@ struct PropertyMembers
             comms::field::IntValue<
                 mqtt5::field::FieldBase<>,
                 std::uint16_t,
-                comms::option::DefaultNumValue<65535L>,
-                comms::option::ValidNumValueRange<1, 65535L>
+                comms::option::def::DefaultNumValue<65535L>,
+                comms::option::def::ValidNumValueRange<1, 65535L>
             >
         {
             /// @brief Name of the field.
@@ -1477,12 +1477,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<34>,
-                comms::option::ValidNumValue<34>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<34>,
+                comms::option::def::ValidNumValue<34>
             >
         {
             /// @brief Name of the field.
@@ -1556,12 +1556,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<36>,
-                comms::option::ValidNumValue<36>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<36>,
+                comms::option::def::ValidNumValue<36>
             >
         {
             /// @brief Name of the field.
@@ -1586,7 +1586,7 @@ struct PropertyMembers
             comms::field::EnumValue<
                 mqtt5::field::FieldBase<>,
                 ValueVal,
-                comms::option::ValidNumValueRange<0, 1>
+                comms::option::def::ValidNumValueRange<0, 1>
             >
         {
             /// @brief Name of the field.
@@ -1661,12 +1661,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<37>,
-                comms::option::ValidNumValue<37>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<37>,
+                comms::option::def::ValidNumValue<37>
             >
         {
             /// @brief Name of the field.
@@ -1739,12 +1739,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<38>,
-                comms::option::ValidNumValue<38>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<38>,
+                comms::option::def::ValidNumValue<38>
             >
         {
             /// @brief Name of the field.
@@ -1876,12 +1876,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<39>,
-                comms::option::ValidNumValue<39>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<39>,
+                comms::option::def::ValidNumValue<39>
             >
         {
             /// @brief Name of the field.
@@ -1955,12 +1955,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<40>,
-                comms::option::ValidNumValue<40>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<40>,
+                comms::option::def::ValidNumValue<40>
             >
         {
             /// @brief Name of the field.
@@ -2033,12 +2033,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<41>,
-                comms::option::ValidNumValue<41>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<41>,
+                comms::option::def::ValidNumValue<41>
             >
         {
             /// @brief Name of the field.
@@ -2111,12 +2111,12 @@ struct PropertyMembers
         /// @brief Definition of <b>"Id"</b> field.
         struct Id : public
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::FailOnInvalid<>,
-                comms::option::VarLength<1U, 4U>,
-                comms::option::DefaultNumValue<42>,
-                comms::option::ValidNumValue<42>
+                comms::option::def::FailOnInvalid<>,
+                comms::option::def::VarLength<1U, 4U>,
+                comms::option::def::DefaultNumValue<42>,
+                comms::option::def::ValidNumValue<42>
             >
         {
             /// @brief Name of the field.
@@ -2224,7 +2224,7 @@ class Property : public
         mqtt5::field::FieldBase<>,
         typename PropertyMembers<TOpt>::All,
         TExtraOpts...,
-        comms::option::HasCustomRead
+        comms::option::def::HasCustomRead
     >
 {
     using Base = 
@@ -2232,7 +2232,7 @@ class Property : public
             mqtt5::field::FieldBase<>,
             typename PropertyMembers<TOpt>::All,
             TExtraOpts...,
-            comms::option::HasCustomRead
+            comms::option::def::HasCustomRead
         >;
 public:
     /// @brief Allow access to internal fields.
@@ -2308,11 +2308,12 @@ public:
     {
         using CommonKeyField=
             comms::field::IntValue<
-                mqtt5::field::FieldBase<comms::option::LittleEndian>,
+                mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
                 std::uint32_t,
-                comms::option::VarLength<1U, 4U>
+                comms::option::def::VarLength<1U, 4U>
             >;
         CommonKeyField commonKeyField;
+    
         auto origIter = iter;
         auto es = commonKeyField.read(iter, len);
         if (es != comms::ErrorStatus::Success) {
@@ -2486,6 +2487,198 @@ public:
         return comms::ErrorStatus::InvalidMsgData;
     }
     
+    /// @brief Optimized currFieldExec functionality.
+    /// @details Replaces the currFieldExec() member function defined
+    ///    by @b comms::field::Variant.
+    template <typename TFunc>
+    void currFieldExec(TFunc&& func) 
+    {
+        switch (Base::currentField()) {
+        case FieldIdx_payloadFormatIndicator:
+            memFieldDispatch<FieldIdx_payloadFormatIndicator>(accessField_payloadFormatIndicator(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_messageExpiryInterval:
+            memFieldDispatch<FieldIdx_messageExpiryInterval>(accessField_messageExpiryInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_contentType:
+            memFieldDispatch<FieldIdx_contentType>(accessField_contentType(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_responseTopic:
+            memFieldDispatch<FieldIdx_responseTopic>(accessField_responseTopic(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_correlationData:
+            memFieldDispatch<FieldIdx_correlationData>(accessField_correlationData(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_subscriptionId:
+            memFieldDispatch<FieldIdx_subscriptionId>(accessField_subscriptionId(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_sessionExpiryInterval:
+            memFieldDispatch<FieldIdx_sessionExpiryInterval>(accessField_sessionExpiryInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_assignedClientId:
+            memFieldDispatch<FieldIdx_assignedClientId>(accessField_assignedClientId(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_serverKeepAlive:
+            memFieldDispatch<FieldIdx_serverKeepAlive>(accessField_serverKeepAlive(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_authMethod:
+            memFieldDispatch<FieldIdx_authMethod>(accessField_authMethod(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_authData:
+            memFieldDispatch<FieldIdx_authData>(accessField_authData(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_requestProblemInfo:
+            memFieldDispatch<FieldIdx_requestProblemInfo>(accessField_requestProblemInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_willDelayInterval:
+            memFieldDispatch<FieldIdx_willDelayInterval>(accessField_willDelayInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_requestResponseInfo:
+            memFieldDispatch<FieldIdx_requestResponseInfo>(accessField_requestResponseInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_responseInfo:
+            memFieldDispatch<FieldIdx_responseInfo>(accessField_responseInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_serverRef:
+            memFieldDispatch<FieldIdx_serverRef>(accessField_serverRef(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_reasonStr:
+            memFieldDispatch<FieldIdx_reasonStr>(accessField_reasonStr(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_receiveMax:
+            memFieldDispatch<FieldIdx_receiveMax>(accessField_receiveMax(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_topicAliasMax:
+            memFieldDispatch<FieldIdx_topicAliasMax>(accessField_topicAliasMax(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_maxQos:
+            memFieldDispatch<FieldIdx_maxQos>(accessField_maxQos(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_retainAvailable:
+            memFieldDispatch<FieldIdx_retainAvailable>(accessField_retainAvailable(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_userProperty:
+            memFieldDispatch<FieldIdx_userProperty>(accessField_userProperty(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_maxPacketSize:
+            memFieldDispatch<FieldIdx_maxPacketSize>(accessField_maxPacketSize(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_wildcardSubAvail:
+            memFieldDispatch<FieldIdx_wildcardSubAvail>(accessField_wildcardSubAvail(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_subIdAvail:
+            memFieldDispatch<FieldIdx_subIdAvail>(accessField_subIdAvail(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_sharedSubAvail:
+            memFieldDispatch<FieldIdx_sharedSubAvail>(accessField_sharedSubAvail(), std::forward<TFunc>(func));
+            break;
+        default:
+            COMMS_ASSERT(!"Invalid field execution");
+            break;
+        }
+    }
+    
+    /// @brief Optimized currFieldExec functionality (const variant).
+    /// @details Replaces the currFieldExec() member function defined
+    ///    by @b comms::field::Variant.
+    template <typename TFunc>
+    void currFieldExec(TFunc&& func) const
+    {
+        switch (Base::currentField()) {
+        case FieldIdx_payloadFormatIndicator:
+            memFieldDispatch<FieldIdx_payloadFormatIndicator>(accessField_payloadFormatIndicator(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_messageExpiryInterval:
+            memFieldDispatch<FieldIdx_messageExpiryInterval>(accessField_messageExpiryInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_contentType:
+            memFieldDispatch<FieldIdx_contentType>(accessField_contentType(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_responseTopic:
+            memFieldDispatch<FieldIdx_responseTopic>(accessField_responseTopic(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_correlationData:
+            memFieldDispatch<FieldIdx_correlationData>(accessField_correlationData(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_subscriptionId:
+            memFieldDispatch<FieldIdx_subscriptionId>(accessField_subscriptionId(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_sessionExpiryInterval:
+            memFieldDispatch<FieldIdx_sessionExpiryInterval>(accessField_sessionExpiryInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_assignedClientId:
+            memFieldDispatch<FieldIdx_assignedClientId>(accessField_assignedClientId(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_serverKeepAlive:
+            memFieldDispatch<FieldIdx_serverKeepAlive>(accessField_serverKeepAlive(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_authMethod:
+            memFieldDispatch<FieldIdx_authMethod>(accessField_authMethod(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_authData:
+            memFieldDispatch<FieldIdx_authData>(accessField_authData(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_requestProblemInfo:
+            memFieldDispatch<FieldIdx_requestProblemInfo>(accessField_requestProblemInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_willDelayInterval:
+            memFieldDispatch<FieldIdx_willDelayInterval>(accessField_willDelayInterval(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_requestResponseInfo:
+            memFieldDispatch<FieldIdx_requestResponseInfo>(accessField_requestResponseInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_responseInfo:
+            memFieldDispatch<FieldIdx_responseInfo>(accessField_responseInfo(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_serverRef:
+            memFieldDispatch<FieldIdx_serverRef>(accessField_serverRef(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_reasonStr:
+            memFieldDispatch<FieldIdx_reasonStr>(accessField_reasonStr(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_receiveMax:
+            memFieldDispatch<FieldIdx_receiveMax>(accessField_receiveMax(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_topicAliasMax:
+            memFieldDispatch<FieldIdx_topicAliasMax>(accessField_topicAliasMax(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_maxQos:
+            memFieldDispatch<FieldIdx_maxQos>(accessField_maxQos(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_retainAvailable:
+            memFieldDispatch<FieldIdx_retainAvailable>(accessField_retainAvailable(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_userProperty:
+            memFieldDispatch<FieldIdx_userProperty>(accessField_userProperty(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_maxPacketSize:
+            memFieldDispatch<FieldIdx_maxPacketSize>(accessField_maxPacketSize(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_wildcardSubAvail:
+            memFieldDispatch<FieldIdx_wildcardSubAvail>(accessField_wildcardSubAvail(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_subIdAvail:
+            memFieldDispatch<FieldIdx_subIdAvail>(accessField_subIdAvail(), std::forward<TFunc>(func));
+            break;
+        case FieldIdx_sharedSubAvail:
+            memFieldDispatch<FieldIdx_sharedSubAvail>(accessField_sharedSubAvail(), std::forward<TFunc>(func));
+            break;
+        default:
+            COMMS_ASSERT(!"Invalid field execution");
+            break;
+        }
+    }
+    
+private:
+    template <std::size_t TIdx, typename TField, typename TFunc>
+    static void memFieldDispatch(TField&& f, TFunc&& func)
+    {
+        #ifdef _MSC_VER
+            func.operator()<TIdx>(std::forward<TField>(f)); // VS compiler
+        #else // #ifdef _MSC_VER
+            func.template operator()<TIdx>(std::forward<TField>(f)); // All other compilers
+        #endif // #ifdef _MSC_VER
+    }
 };
 
 } // namespace field
