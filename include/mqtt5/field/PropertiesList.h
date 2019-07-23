@@ -25,9 +25,9 @@ struct PropertiesListMembers
     /// @brief Definition of <b>"Length"</b> field.
     struct Length : public
         comms::field::IntValue<
-            mqtt5::field::FieldBase<comms::option::LittleEndian>,
+            mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
             std::uint32_t,
-            comms::option::VarLength<1U, 4U>
+            comms::option::def::VarLength<1U, 4U>
         >
     {
         /// @brief Name of the field.
@@ -50,7 +50,7 @@ struct PropertiesList : public
         mqtt5::field::Property<TOpt>,
         TExtraOpts...,
         typename TOpt::field::PropertiesList,
-        comms::option::SequenceSerLengthFieldPrefix<typename PropertiesListMembers<TOpt>::Length>
+        comms::option::def::SequenceSerLengthFieldPrefix<typename PropertiesListMembers<TOpt>::Length>
     >
 {
     /// @brief Name of the field.

@@ -74,10 +74,10 @@ class Unsubscribe : public
     comms::MessageBase<
         TMsgBase,
         typename TOpt::message::Unsubscribe,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Unsubscribe>,
-        comms::option::FieldsImpl<typename UnsubscribeFields<TOpt>::All>,
-        comms::option::MsgType<Unsubscribe<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Unsubscribe>,
+        comms::option::def::FieldsImpl<typename UnsubscribeFields<TOpt>::All>,
+        comms::option::def::MsgType<Unsubscribe<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
@@ -85,10 +85,10 @@ class Unsubscribe : public
         comms::MessageBase<
             TMsgBase,
             typename TOpt::message::Unsubscribe,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Unsubscribe>,
-            comms::option::FieldsImpl<typename UnsubscribeFields<TOpt>::All>,
-            comms::option::MsgType<Unsubscribe<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Unsubscribe>,
+            comms::option::def::FieldsImpl<typename UnsubscribeFields<TOpt>::All>,
+            comms::option::def::MsgType<Unsubscribe<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

@@ -21,10 +21,10 @@ namespace field
 template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
 struct VarLenInt : public
     comms::field::IntValue<
-        mqtt5::field::FieldBase<comms::option::LittleEndian>,
+        mqtt5::field::FieldBase<comms::option::def::LittleEndian>,
         std::uint32_t,
         TExtraOpts...,
-        comms::option::VarLength<1U, 4U>
+        comms::option::def::VarLength<1U, 4U>
     >
 {
     /// @brief Name of the field.

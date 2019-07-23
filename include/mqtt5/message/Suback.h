@@ -74,10 +74,10 @@ class Suback : public
     comms::MessageBase<
         TMsgBase,
         typename TOpt::message::Suback,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Suback>,
-        comms::option::FieldsImpl<typename SubackFields<TOpt>::All>,
-        comms::option::MsgType<Suback<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Suback>,
+        comms::option::def::FieldsImpl<typename SubackFields<TOpt>::All>,
+        comms::option::def::MsgType<Suback<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
@@ -85,10 +85,10 @@ class Suback : public
         comms::MessageBase<
             TMsgBase,
             typename TOpt::message::Suback,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Suback>,
-            comms::option::FieldsImpl<typename SubackFields<TOpt>::All>,
-            comms::option::MsgType<Suback<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Suback>,
+            comms::option::def::FieldsImpl<typename SubackFields<TOpt>::All>,
+            comms::option::def::MsgType<Suback<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

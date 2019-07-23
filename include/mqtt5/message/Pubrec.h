@@ -62,20 +62,20 @@ template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Pubrec : public
     comms::MessageBase<
         TMsgBase,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Pubrec>,
-        comms::option::FieldsImpl<typename PubrecFields<TOpt>::All>,
-        comms::option::MsgType<Pubrec<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Pubrec>,
+        comms::option::def::FieldsImpl<typename PubrecFields<TOpt>::All>,
+        comms::option::def::MsgType<Pubrec<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
     using Base =
         comms::MessageBase<
             TMsgBase,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Pubrec>,
-            comms::option::FieldsImpl<typename PubrecFields<TOpt>::All>,
-            comms::option::MsgType<Pubrec<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Pubrec>,
+            comms::option::def::FieldsImpl<typename PubrecFields<TOpt>::All>,
+            comms::option::def::MsgType<Pubrec<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

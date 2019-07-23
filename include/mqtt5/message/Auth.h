@@ -54,20 +54,20 @@ template <typename TMsgBase, typename TOpt = mqtt5::options::DefaultOptions>
 class Auth : public
     comms::MessageBase<
         TMsgBase,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Auth>,
-        comms::option::FieldsImpl<typename AuthFields<TOpt>::All>,
-        comms::option::MsgType<Auth<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Auth>,
+        comms::option::def::FieldsImpl<typename AuthFields<TOpt>::All>,
+        comms::option::def::MsgType<Auth<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
     using Base =
         comms::MessageBase<
             TMsgBase,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Auth>,
-            comms::option::FieldsImpl<typename AuthFields<TOpt>::All>,
-            comms::option::MsgType<Auth<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Auth>,
+            comms::option::def::FieldsImpl<typename AuthFields<TOpt>::All>,
+            comms::option::def::MsgType<Auth<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:

@@ -74,10 +74,10 @@ class Unsuback : public
     comms::MessageBase<
         TMsgBase,
         typename TOpt::message::Unsuback,
-        comms::option::StaticNumIdImpl<mqtt5::MsgId_Unsuback>,
-        comms::option::FieldsImpl<typename UnsubackFields<TOpt>::All>,
-        comms::option::MsgType<Unsuback<TMsgBase, TOpt> >,
-        comms::option::HasName
+        comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Unsuback>,
+        comms::option::def::FieldsImpl<typename UnsubackFields<TOpt>::All>,
+        comms::option::def::MsgType<Unsuback<TMsgBase, TOpt> >,
+        comms::option::def::HasName
     >
 {
     // Redefinition of the base class type
@@ -85,10 +85,10 @@ class Unsuback : public
         comms::MessageBase<
             TMsgBase,
             typename TOpt::message::Unsuback,
-            comms::option::StaticNumIdImpl<mqtt5::MsgId_Unsuback>,
-            comms::option::FieldsImpl<typename UnsubackFields<TOpt>::All>,
-            comms::option::MsgType<Unsuback<TMsgBase, TOpt> >,
-            comms::option::HasName
+            comms::option::def::StaticNumIdImpl<mqtt5::MsgId_Unsuback>,
+            comms::option::def::FieldsImpl<typename UnsubackFields<TOpt>::All>,
+            comms::option::def::MsgType<Unsuback<TMsgBase, TOpt> >,
+            comms::option::def::HasName
         >;
 
 public:
