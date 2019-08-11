@@ -23,14 +23,16 @@ namespace
 static QVariantMap createProps_packetId()
 {
     using Field = mqtt5::message::SubscribeFields<>::PacketId;
-    return cc_plugin::field::createProps_packetId(Field::name());
+    auto props = cc_plugin::field::createProps_packetId(Field::name());
+    return props;
     
 }
 
 static QVariantMap createProps_propertiesList()
 {
     using Field = mqtt5::message::SubscribeFields<>::PropertiesList;
-    return cc_plugin::field::createProps_propertiesList(Field::name());
+    auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+    return props;
     
 }
 
@@ -41,7 +43,8 @@ struct ListMembers
         static QVariantMap createProps_topic()
         {
             using Field = mqtt5::message::SubscribeFields<>::ListMembers::ElementMembers::Topic;
-            return cc_plugin::field::createProps_topic(Field::name());
+            auto props = cc_plugin::field::createProps_topic(Field::name());
+            return props;
             
         }
         
@@ -50,7 +53,8 @@ struct ListMembers
             static QVariantMap createProps_qos()
             {
                 using Field = mqtt5::message::SubscribeFields<>::ListMembers::ElementMembers::OptionsMembers::Qos;
-                return cc_plugin::field::createProps_qos(Field::name(), true);
+                auto props = cc_plugin::field::createProps_qos(Field::name(), true);
+                return props;
                 
             }
             

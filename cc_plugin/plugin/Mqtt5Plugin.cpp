@@ -14,13 +14,15 @@ namespace plugin
 {
 
 Mqtt5Plugin::Mqtt5Plugin()
+  : m_protocol(new Mqtt5Protocol())
 {
     pluginProperties()
         .setProtocolCreateFunc(
-            []() -> cc::ProtocolPtr
+            [this]() -> cc::ProtocolPtr
             {
-                return cc::ProtocolPtr(new Mqtt5Protocol());
-            });
+                return m_protocol;
+            })
+            ;
 }
 
 Mqtt5Plugin::~Mqtt5Plugin() = default;

@@ -22,21 +22,24 @@ namespace
 static QVariantMap createProps_packetId()
 {
     using Field = mqtt5::message::PubackFields<>::PacketId;
-    return cc_plugin::field::createProps_packetId(Field::name());
+    auto props = cc_plugin::field::createProps_packetId(Field::name());
+    return props;
     
 }
 
 static QVariantMap createProps_reasonCode()
 {
     using Field = mqtt5::message::PubackFields<>::ReasonCode;
-    return cc_plugin::field::createProps_reasonCode(Field::name());
+    auto props = cc_plugin::field::createProps_reasonCode(Field::name());
+    return props;
     
 }
 
 static QVariantMap createProps_propertiesList()
 {
     using Field = mqtt5::message::PubackFields<>::PropertiesList;
-    return cc_plugin::field::createProps_propertiesList(Field::name());
+    auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+    return props;
     
 }
 
