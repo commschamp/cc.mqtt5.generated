@@ -22,7 +22,8 @@ namespace
 static QVariantMap createProps_topic()
 {
     using Field = mqtt5::message::PublishFields<>::Topic;
-    return cc_plugin::field::createProps_topic(Field::name());
+    auto props = cc_plugin::field::createProps_topic(Field::name());
+    return props;
     
 }
 
@@ -41,7 +42,8 @@ static QVariantMap createProps_packetId()
 static QVariantMap createProps_propertiesList()
 {
     using Field = mqtt5::message::PublishFields<>::PropertiesList;
-    return cc_plugin::field::createProps_propertiesList(Field::name());
+    auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+    return props;
     
 }
 

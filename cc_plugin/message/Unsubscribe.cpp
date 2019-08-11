@@ -23,14 +23,16 @@ namespace
 static QVariantMap createProps_packetId()
 {
     using Field = mqtt5::message::UnsubscribeFields<>::PacketId;
-    return cc_plugin::field::createProps_packetId(Field::name());
+    auto props = cc_plugin::field::createProps_packetId(Field::name());
+    return props;
     
 }
 
 static QVariantMap createProps_propertiesList()
 {
     using Field = mqtt5::message::UnsubscribeFields<>::PropertiesList;
-    return cc_plugin::field::createProps_propertiesList(Field::name());
+    auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+    return props;
     
 }
 

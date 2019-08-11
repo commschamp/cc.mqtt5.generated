@@ -3,6 +3,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QtPlugin>
 #include "comms_champion/Plugin.h"
+#include "comms_champion/Protocol.h"
 
 namespace mqtt5
 {
@@ -22,6 +23,8 @@ class Mqtt5Plugin : public comms_champion::Plugin
 public:
     Mqtt5Plugin();
     virtual ~Mqtt5Plugin();
+private:
+    comms_champion::ProtocolPtr m_protocol;
 };
 
 } // namespace plugin

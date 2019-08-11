@@ -130,7 +130,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::ContentTypeMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -168,7 +169,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::ResponseTopicMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -206,7 +208,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::CorrelationDataMembers::Value;
-            return cc_plugin::field::createProps_binData(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_binData(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -244,7 +247,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::SubscriptionIdMembers::Value;
-            return cc_plugin::field::createProps_varLenInt(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_varLenInt(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -325,7 +329,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::AssignedClientIdMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -406,7 +411,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::AuthMethodMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -444,7 +450,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::AuthDataMembers::Value;
-            return cc_plugin::field::createProps_binData(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_binData(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -482,7 +489,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::RequestProblemInfoMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -563,7 +571,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::RequestResponseInfoMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -601,7 +610,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::ResponseInfoMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -639,7 +649,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::ServerRefMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -677,7 +688,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::ReasonStrMembers::Value;
-            return cc_plugin::field::createProps_string(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -846,7 +858,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::RetainAvailableMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -886,14 +899,16 @@ struct PropertyMembers
             static QVariantMap createProps_first(bool serHidden)
             {
                 using Field = mqtt5::field::PropertyMembers<>::UserPropertyMembers::ValueMembers::First;
-                return cc_plugin::field::createProps_string(Field::name(), serHidden);
+                auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+                return props;
                 
             }
             
             static QVariantMap createProps_second(bool serHidden)
             {
                 using Field = mqtt5::field::PropertyMembers<>::UserPropertyMembers::ValueMembers::Second;
-                return cc_plugin::field::createProps_string(Field::name(), serHidden);
+                auto props = cc_plugin::field::createProps_string(Field::name(), serHidden);
+                return props;
                 
             }
             
@@ -990,7 +1005,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::WildcardSubAvailMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -1028,7 +1044,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::SubIdAvailMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         
@@ -1066,7 +1083,8 @@ struct PropertyMembers
         static QVariantMap createProps_value(bool serHidden)
         {
             using Field = mqtt5::field::PropertyMembers<>::SharedSubAvailMembers::Value;
-            return cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            auto props = cc_plugin::field::createProps_enableEnum(Field::name(), serHidden);
+            return props;
             
         }
         

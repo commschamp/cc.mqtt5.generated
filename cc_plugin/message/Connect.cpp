@@ -24,7 +24,8 @@ namespace
 static QVariantMap createProps_protocolName()
 {
     using Field = mqtt5::message::ConnectFields<>::ProtocolName;
-    return cc_plugin::field::createProps_protocolName(Field::name());
+    auto props = cc_plugin::field::createProps_protocolName(Field::name());
+    return props;
     
 }
 
@@ -56,7 +57,8 @@ struct FlagsMembers
     static QVariantMap createProps_willQos()
     {
         using Field = mqtt5::message::ConnectFields<>::FlagsMembers::WillQos;
-        return cc_plugin::field::createProps_qos(Field::name(), true);
+        auto props = cc_plugin::field::createProps_qos(Field::name(), true);
+        return props;
         
     }
     
@@ -102,14 +104,16 @@ static QVariantMap createProps_keepAlive()
 static QVariantMap createProps_properties()
 {
     using Field = mqtt5::message::ConnectFields<>::Properties;
-    return cc_plugin::field::createProps_propertiesList(Field::name());
+    auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+    return props;
     
 }
 
 static QVariantMap createProps_clientId()
 {
     using Field = mqtt5::message::ConnectFields<>::ClientId;
-    return cc_plugin::field::createProps_string(Field::name());
+    auto props = cc_plugin::field::createProps_string(Field::name());
+    return props;
     
 }
 
@@ -118,7 +122,8 @@ struct WillPropertiesMembers
     static QVariantMap createProps_willProperties()
     {
         using Field = mqtt5::message::ConnectFields<>::WillPropertiesMembers::WillProperties;
-        return cc_plugin::field::createProps_propertiesList(Field::name());
+        auto props = cc_plugin::field::createProps_propertiesList(Field::name());
+        return props;
         
     }
     
@@ -141,7 +146,8 @@ struct WillTopicMembers
     static QVariantMap createProps_willTopic()
     {
         using Field = mqtt5::message::ConnectFields<>::WillTopicMembers::WillTopic;
-        return cc_plugin::field::createProps_string(Field::name());
+        auto props = cc_plugin::field::createProps_string(Field::name());
+        return props;
         
     }
     
@@ -164,7 +170,8 @@ struct WillMessageMembers
     static QVariantMap createProps_willMessage()
     {
         using Field = mqtt5::message::ConnectFields<>::WillMessageMembers::WillMessage;
-        return cc_plugin::field::createProps_binData(Field::name());
+        auto props = cc_plugin::field::createProps_binData(Field::name());
+        return props;
         
     }
     
@@ -187,7 +194,8 @@ struct UserNameMembers
     static QVariantMap createProps_userName()
     {
         using Field = mqtt5::message::ConnectFields<>::UserNameMembers::UserName;
-        return cc_plugin::field::createProps_string(Field::name());
+        auto props = cc_plugin::field::createProps_string(Field::name());
+        return props;
         
     }
     
@@ -210,7 +218,8 @@ struct PasswordMembers
     static QVariantMap createProps_password()
     {
         using Field = mqtt5::message::ConnectFields<>::PasswordMembers::Password;
-        return cc_plugin::field::createProps_binData(Field::name());
+        auto props = cc_plugin::field::createProps_binData(Field::name());
+        return props;
         
     }
     
