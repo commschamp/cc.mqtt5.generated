@@ -24,12 +24,102 @@ namespace mqtt5
 namespace field
 {
 
+/// @brief Scope for all the common definitions of the member fields of
+///     @ref mqtt5::field::Property bundle.
+struct PropertyMembersCommon
+{
+    /// @brief Scope for all the common definitions of the member fields of
+    ///     @ref mqtt5::field::PropertyMembers::PayloadFormatIndicator bundle.
+    struct PayloadFormatIndicatorMembersCommon
+    {
+        /// @brief Values enumerator for
+        ///     @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::Value field.
+        enum class ValueVal : std::uint8_t
+        {
+            Unspecified = 0, ///< value @b Unspecified
+            Utf8 = 1, ///< value <b>UTF-8</b>.
+            
+            // --- Extra values generated for convenience ---
+            FirstValue = 0, ///< First defined value.
+            LastValue = 1, ///< Last defined value.
+            ValuesLimit = 2, ///< Upper limit for defined values.
+            
+        };
+        
+        /// @brief Common functions for
+        ///     @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::Value field.
+        struct ValueCommon
+        {
+            /// @brief Retrieve name of the enum value
+            static const char* valueName(ValueVal val)
+            {
+                static const char* Map[] = {
+                    "Unspecified",
+                    "UTF-8"
+                };
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                
+                if (MapSize <= static_cast<std::size_t>(val)) {
+                    return nullptr;
+                }
+                
+                return Map[static_cast<std::size_t>(val)];
+            }
+            
+        };
+        
+    };
+    
+    /// @brief Scope for all the common definitions of the member fields of
+    ///     @ref mqtt5::field::PropertyMembers::MaxQos bundle.
+    struct MaxQosMembersCommon
+    {
+        /// @brief Values enumerator for
+        ///     @ref mqtt5::field::PropertyMembers::MaxQosMembers::Value field.
+        enum class ValueVal : std::uint8_t
+        {
+            AtMostOnceDelivery = 0, ///< value @b AtMostOnceDelivery
+            AtLeastOnceDelivery = 1, ///< value @b AtLeastOnceDelivery
+            
+            // --- Extra values generated for convenience ---
+            FirstValue = 0, ///< First defined value.
+            LastValue = 1, ///< Last defined value.
+            ValuesLimit = 2, ///< Upper limit for defined values.
+            
+        };
+        
+        /// @brief Common functions for
+        ///     @ref mqtt5::field::PropertyMembers::MaxQosMembers::Value field.
+        struct ValueCommon
+        {
+            /// @brief Retrieve name of the enum value
+            static const char* valueName(ValueVal val)
+            {
+                static const char* Map[] = {
+                    "AtMostOnceDelivery",
+                    "AtLeastOnceDelivery"
+                };
+                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                
+                if (MapSize <= static_cast<std::size_t>(val)) {
+                    return nullptr;
+                }
+                
+                return Map[static_cast<std::size_t>(val)];
+            }
+            
+        };
+        
+    };
+    
+};
+
 /// @brief Scope for all the member fields of @ref Property bitfield.
 /// @tparam TOpt Protocol options.
 template <typename TOpt = mqtt5::options::DefaultOptions>
 struct PropertyMembers
 {
-    /// @brief Scope for all the member fields of @ref PayloadFormatIndicator bitfield.
+    /// @brief Scope for all the member fields of @ref PayloadFormatIndicator bundle.
     struct PayloadFormatIndicatorMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -51,13 +141,9 @@ struct PropertyMembers
             
         };
         
-        /// @brief Values enumerator for @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::Value field.
-        enum class ValueVal : std::uint8_t
-        {
-            Unspecified = 0, ///< value @b Unspecified
-            Utf8 = 1, ///< value <b>UTF-8</b>.
-            
-        };
+        /// @brief Values enumerator for
+        ///     @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::Value field.
+        using ValueVal = mqtt5::field::PropertyMembersCommon::PayloadFormatIndicatorMembersCommon::ValueVal;
         
         /// @brief Definition of <b>"Value"</b> field.
         /// @see @ref mqtt5::field::PropertyMembers::PayloadFormatIndicatorMembers::ValueVal
@@ -77,17 +163,7 @@ struct PropertyMembers
             /// @brief Retrieve name of the enum value
             static const char* valueName(ValueVal val)
             {
-                static const char* Map[] = {
-                    "Unspecified",
-                    "UTF-8"
-                };
-                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
-                
-                if (MapSize <= static_cast<std::size_t>(val)) {
-                    return nullptr;
-                }
-                
-                return Map[static_cast<std::size_t>(val)];
+                return mqtt5::field::PropertyMembersCommon::PayloadFormatIndicatorMembersCommon::ValueCommon::valueName(val);
             }
             
         };
@@ -134,7 +210,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref MessageExpiryInterval bitfield.
+    /// @brief Scope for all the member fields of @ref MessageExpiryInterval bundle.
     struct MessageExpiryIntervalMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -214,7 +290,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ContentType bitfield.
+    /// @brief Scope for all the member fields of @ref ContentType bundle.
     struct ContentTypeMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -292,7 +368,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ResponseTopic bitfield.
+    /// @brief Scope for all the member fields of @ref ResponseTopic bundle.
     struct ResponseTopicMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -370,7 +446,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref CorrelationData bitfield.
+    /// @brief Scope for all the member fields of @ref CorrelationData bundle.
     struct CorrelationDataMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -448,7 +524,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref SubscriptionId bitfield.
+    /// @brief Scope for all the member fields of @ref SubscriptionId bundle.
     struct SubscriptionIdMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -526,7 +602,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref SessionExpiryInterval bitfield.
+    /// @brief Scope for all the member fields of @ref SessionExpiryInterval bundle.
     struct SessionExpiryIntervalMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -606,7 +682,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref AssignedClientId bitfield.
+    /// @brief Scope for all the member fields of @ref AssignedClientId bundle.
     struct AssignedClientIdMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -684,7 +760,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ServerKeepAlive bitfield.
+    /// @brief Scope for all the member fields of @ref ServerKeepAlive bundle.
     struct ServerKeepAliveMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -764,7 +840,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref AuthMethod bitfield.
+    /// @brief Scope for all the member fields of @ref AuthMethod bundle.
     struct AuthMethodMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -842,7 +918,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref AuthData bitfield.
+    /// @brief Scope for all the member fields of @ref AuthData bundle.
     struct AuthDataMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -920,7 +996,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref RequestProblemInfo bitfield.
+    /// @brief Scope for all the member fields of @ref RequestProblemInfo bundle.
     struct RequestProblemInfoMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -998,7 +1074,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref WillDelayInterval bitfield.
+    /// @brief Scope for all the member fields of @ref WillDelayInterval bundle.
     struct WillDelayIntervalMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1078,7 +1154,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref RequestResponseInfo bitfield.
+    /// @brief Scope for all the member fields of @ref RequestResponseInfo bundle.
     struct RequestResponseInfoMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1156,7 +1232,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ResponseInfo bitfield.
+    /// @brief Scope for all the member fields of @ref ResponseInfo bundle.
     struct ResponseInfoMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1234,7 +1310,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ServerRef bitfield.
+    /// @brief Scope for all the member fields of @ref ServerRef bundle.
     struct ServerRefMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1312,7 +1388,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ReasonStr bitfield.
+    /// @brief Scope for all the member fields of @ref ReasonStr bundle.
     struct ReasonStrMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1390,7 +1466,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref ReceiveMax bitfield.
+    /// @brief Scope for all the member fields of @ref ReceiveMax bundle.
     struct ReceiveMaxMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1471,7 +1547,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref TopicAliasMax bitfield.
+    /// @brief Scope for all the member fields of @ref TopicAliasMax bundle.
     struct TopicAliasMaxMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1550,7 +1626,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref MaxQos bitfield.
+    /// @brief Scope for all the member fields of @ref MaxQos bundle.
     struct MaxQosMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1572,13 +1648,9 @@ struct PropertyMembers
             
         };
         
-        /// @brief Values enumerator for @ref mqtt5::field::PropertyMembers::MaxQosMembers::Value field.
-        enum class ValueVal : std::uint8_t
-        {
-            AtMostOnceDelivery = 0, ///< value @b AtMostOnceDelivery
-            AtLeastOnceDelivery = 1, ///< value @b AtLeastOnceDelivery
-            
-        };
+        /// @brief Values enumerator for
+        ///     @ref mqtt5::field::PropertyMembers::MaxQosMembers::Value field.
+        using ValueVal = mqtt5::field::PropertyMembersCommon::MaxQosMembersCommon::ValueVal;
         
         /// @brief Definition of <b>"Value"</b> field.
         /// @see @ref mqtt5::field::PropertyMembers::MaxQosMembers::ValueVal
@@ -1598,17 +1670,7 @@ struct PropertyMembers
             /// @brief Retrieve name of the enum value
             static const char* valueName(ValueVal val)
             {
-                static const char* Map[] = {
-                    "AtMostOnceDelivery",
-                    "AtLeastOnceDelivery"
-                };
-                static const std::size_t MapSize = std::extent<decltype(Map)>::value;
-                
-                if (MapSize <= static_cast<std::size_t>(val)) {
-                    return nullptr;
-                }
-                
-                return Map[static_cast<std::size_t>(val)];
+                return mqtt5::field::PropertyMembersCommon::MaxQosMembersCommon::ValueCommon::valueName(val);
             }
             
         };
@@ -1655,7 +1717,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref RetainAvailable bitfield.
+    /// @brief Scope for all the member fields of @ref RetainAvailable bundle.
     struct RetainAvailableMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1733,7 +1795,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref UserProperty bitfield.
+    /// @brief Scope for all the member fields of @ref UserProperty bundle.
     struct UserPropertyMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1755,7 +1817,7 @@ struct PropertyMembers
             
         };
         
-        /// @brief Scope for all the member fields of @ref Value bitfield.
+        /// @brief Scope for all the member fields of @ref Value bundle.
         struct ValueMembers
         {
             /// @brief Definition of <b>"First"</b> field.
@@ -1870,7 +1932,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref MaxPacketSize bitfield.
+    /// @brief Scope for all the member fields of @ref MaxPacketSize bundle.
     struct MaxPacketSizeMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -1949,7 +2011,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref WildcardSubAvail bitfield.
+    /// @brief Scope for all the member fields of @ref WildcardSubAvail bundle.
     struct WildcardSubAvailMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -2027,7 +2089,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref SubIdAvail bitfield.
+    /// @brief Scope for all the member fields of @ref SubIdAvail bundle.
     struct SubIdAvailMembers
     {
         /// @brief Definition of <b>"Id"</b> field.
@@ -2105,7 +2167,7 @@ struct PropertyMembers
         
     };
     
-    /// @brief Scope for all the member fields of @ref SharedSubAvail bitfield.
+    /// @brief Scope for all the member fields of @ref SharedSubAvail bundle.
     struct SharedSubAvailMembers
     {
         /// @brief Definition of <b>"Id"</b> field.

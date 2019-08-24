@@ -18,7 +18,8 @@ namespace mqtt5
 namespace field
 {
 
-/// @brief Values enumerator for @ref mqtt5::field::ReasonCode field.
+/// @brief Values enumerator for
+///     @ref mqtt5::field::ReasonCode field.
 enum class ReasonCodeVal : std::uint8_t
 {
     Success = 0, ///< value @b Success
@@ -67,31 +68,17 @@ enum class ReasonCodeVal : std::uint8_t
     SubIdsNotSupported = 161, ///< value <b>Sub IDs not supported</b>.
     WildcardSubsNotSupported = 162, ///< value <b>Wildcard Subs not supported</b>.
     
+    // --- Extra values generated for convenience ---
+    FirstValue = 0, ///< First defined value.
+    LastValue = 162, ///< Last defined value.
+    ValuesLimit = 163, ///< Upper limit for defined values.
+    
 };
 
-/// @brief Definition of <b>"Reason Code"</b> field.
-/// @see @ref mqtt5::field::ReasonCodeVal
-/// @tparam TOpt Protocol options.
-/// @tparam TExtraOpts Extra options.
-template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
-struct ReasonCode : public
-    comms::field::EnumValue<
-        mqtt5::field::FieldBase<>,
-        ReasonCodeVal,
-        TExtraOpts...,
-        comms::option::def::ValidNumValueRange<0, 2>,
-        comms::option::def::ValidNumValue<4>,
-        comms::option::def::ValidNumValueRange<16, 17>,
-        comms::option::def::ValidNumValueRange<24, 25>,
-        comms::option::def::ValidNumValueRange<128, 162>
-    >
+/// @brief Common functions for
+///     @ref mqtt5::field::ReasonCode field.
+struct ReasonCodeCommon
 {
-    /// @brief Name of the field.
-    static const char* name()
-    {
-        return "Reason Code";
-    }
-    
     /// @brief Retrieve name of the enum value
     static const char* valueName(ReasonCodeVal val)
     {
@@ -154,6 +141,37 @@ struct ReasonCode : public
         }
         
         return iter->second;
+    }
+    
+};
+
+/// @brief Definition of <b>"Reason Code"</b> field.
+/// @see @ref mqtt5::field::ReasonCodeVal
+/// @tparam TOpt Protocol options.
+/// @tparam TExtraOpts Extra options.
+template <typename TOpt = mqtt5::options::DefaultOptions, typename... TExtraOpts>
+struct ReasonCode : public
+    comms::field::EnumValue<
+        mqtt5::field::FieldBase<>,
+        ReasonCodeVal,
+        TExtraOpts...,
+        comms::option::def::ValidNumValueRange<0, 2>,
+        comms::option::def::ValidNumValue<4>,
+        comms::option::def::ValidNumValueRange<16, 17>,
+        comms::option::def::ValidNumValueRange<24, 25>,
+        comms::option::def::ValidNumValueRange<128, 162>
+    >
+{
+    /// @brief Name of the field.
+    static const char* name()
+    {
+        return "Reason Code";
+    }
+    
+    /// @brief Retrieve name of the enum value
+    static const char* valueName(ReasonCodeVal val)
+    {
+        return mqtt5::field::ReasonCodeCommon::valueName(val);
     }
     
 };

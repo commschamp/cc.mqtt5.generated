@@ -20,6 +20,34 @@ namespace mqtt5
 namespace message
 {
 
+/// @brief Common definitions for fields from @ref ConnackFields.
+/// @see @ref ConnackFields
+/// @headerfile "mqtt5/message/Connack.h"
+struct ConnackFieldsCommon
+{
+    /// @brief Common functions for
+    ///     @ref mqtt5::message::ConnackFields::Flags field.
+    struct FlagsCommon
+    {
+        /// @brief Retrieve name of the bit
+        static const char* bitName(std::size_t idx)
+        {
+            static const char* Map[] = {
+                "Session Present"
+            };
+        
+            static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+            if (MapSize <= idx) {
+                return nullptr;
+            }
+        
+            return Map[idx];
+        }
+        
+    };
+    
+};
+
 /// @brief Fields of @ref Connack.
 /// @tparam TOpt Extra options
 /// @see @ref Connack
@@ -62,18 +90,9 @@ struct ConnackFields
         /// @brief Retrieve name of the bit
         static const char* bitName(BitIdx idx)
         {
-            static const char* Map[] = {
-                "Session Present"
-            };
-        
-            static const std::size_t MapSize = std::extent<decltype(Map)>::value;
-            static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
-        
-            if (MapSize <= static_cast<std::size_t>(idx)) {
-                return nullptr;
-            }
-        
-            return Map[static_cast<std::size_t>(idx)];
+            return
+                mqtt5::message::ConnackFieldsCommon::FlagsCommon::bitName(
+                    static_cast<std::size_t>(idx));
         }
         
     };

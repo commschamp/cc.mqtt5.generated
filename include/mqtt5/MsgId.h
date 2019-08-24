@@ -28,6 +28,11 @@ enum MsgId : std::uint8_t
     MsgId_Disconnect = 14, ///< message id of <b>DISCONNECT</b> message.
     MsgId_Auth = 15, ///< message id of <b>AUTH</b> message.
     
+    // --- Extra values generated for convenience ---
+    MsgId_FirstValue = 1, ///< First defined value.
+    MsgId_LastValue = 15, ///< Last defined value.
+    MsgId_ValuesLimit = 16, ///< Upper limit for defined values.
+    
 };
 
 } // namespace mqtt5

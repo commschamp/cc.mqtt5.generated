@@ -28,6 +28,91 @@ namespace mqtt5
 namespace message
 {
 
+/// @brief Common definitions for fields from @ref SubscribeFields.
+/// @see @ref SubscribeFields
+/// @headerfile "mqtt5/message/Subscribe.h"
+struct SubscribeFieldsCommon
+{
+    /// @brief Scope for all the common definitions of the member fields of
+    ///     @ref mqtt5::message::SubscribeFields::List list.
+    struct ListMembersCommon
+    {
+        /// @brief Scope for all the common definitions of the member fields of
+        ///     @ref mqtt5::message::SubscribeFields::ListMembers::Element bundle.
+        struct ElementMembersCommon
+        {
+            /// @brief Scope for all the common definitions of the member fields of
+            ///     @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::Options bitfield.
+            struct OptionsMembersCommon
+            {
+                /// @brief Common functions for
+                ///     @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::Bits field.
+                struct BitsCommon
+                {
+                    /// @brief Retrieve name of the bit
+                    static const char* bitName(std::size_t idx)
+                    {
+                        static const char* Map[] = {
+                            "NL",
+                            "RAP"
+                        };
+                    
+                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                        if (MapSize <= idx) {
+                            return nullptr;
+                        }
+                    
+                        return Map[idx];
+                    }
+                    
+                };
+                
+                /// @brief Values enumerator for
+                ///     @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
+                enum class RetainHandlingVal : std::uint8_t
+                {
+                    Send = 0, ///< value @b Send
+                    SendIfNotExists = 1, ///< value @b SendIfNotExists
+                    DontSend = 2, ///< value @b DontSend
+                    
+                    // --- Extra values generated for convenience ---
+                    FirstValue = 0, ///< First defined value.
+                    LastValue = 2, ///< Last defined value.
+                    ValuesLimit = 3, ///< Upper limit for defined values.
+                    
+                };
+                
+                /// @brief Common functions for
+                ///     @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
+                struct RetainHandlingCommon
+                {
+                    /// @brief Retrieve name of the enum value
+                    static const char* valueName(RetainHandlingVal val)
+                    {
+                        static const char* Map[] = {
+                            "Send",
+                            "SendIfNotExists",
+                            "DontSend"
+                        };
+                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
+                        
+                        if (MapSize <= static_cast<std::size_t>(val)) {
+                            return nullptr;
+                        }
+                        
+                        return Map[static_cast<std::size_t>(val)];
+                    }
+                    
+                };
+                
+            };
+            
+        };
+        
+    };
+    
+};
+
 /// @brief Fields of @ref Subscribe.
 /// @tparam TOpt Extra options
 /// @see @ref Subscribe
@@ -47,10 +132,10 @@ struct SubscribeFields
             TOpt
         >;
     
-    /// @brief Scope for all the member fields of @ref List list.
+    /// @brief Scope for all the member fields of ///     @ref List list.
     struct ListMembers
     {
-        /// @brief Scope for all the member fields of @ref Element bitfield.
+        /// @brief Scope for all the member fields of @ref Element bundle.
         struct ElementMembers
         {
             /// @brief Definition of <b>"Topic"</b> field.
@@ -104,31 +189,16 @@ struct SubscribeFields
                     /// @brief Retrieve name of the bit
                     static const char* bitName(BitIdx idx)
                     {
-                        static const char* Map[] = {
-                            "NL",
-                            "RAP"
-                        };
-                    
-                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
-                        static_assert(MapSize == BitIdx_numOfValues, "Invalid map");
-                    
-                        if (MapSize <= static_cast<std::size_t>(idx)) {
-                            return nullptr;
-                        }
-                    
-                        return Map[static_cast<std::size_t>(idx)];
+                        return
+                            mqtt5::message::SubscribeFieldsCommon::ListMembersCommon::ElementMembersCommon::OptionsMembersCommon::BitsCommon::bitName(
+                                static_cast<std::size_t>(idx));
                     }
                     
                 };
                 
-                /// @brief Values enumerator for @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
-                enum class RetainHandlingVal : std::uint8_t
-                {
-                    Send = 0, ///< value @b Send
-                    SendIfNotExists = 1, ///< value @b SendIfNotExists
-                    DontSend = 2, ///< value @b DontSend
-                    
-                };
+                /// @brief Values enumerator for
+                ///     @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandling field.
+                using RetainHandlingVal = mqtt5::message::SubscribeFieldsCommon::ListMembersCommon::ElementMembersCommon::OptionsMembersCommon::RetainHandlingVal;
                 
                 /// @brief Definition of <b>"Retain Handling"</b> field.
                 /// @see @ref mqtt5::message::SubscribeFields::ListMembers::ElementMembers::OptionsMembers::RetainHandlingVal
@@ -149,18 +219,7 @@ struct SubscribeFields
                     /// @brief Retrieve name of the enum value
                     static const char* valueName(RetainHandlingVal val)
                     {
-                        static const char* Map[] = {
-                            "Send",
-                            "SendIfNotExists",
-                            "DontSend"
-                        };
-                        static const std::size_t MapSize = std::extent<decltype(Map)>::value;
-                        
-                        if (MapSize <= static_cast<std::size_t>(val)) {
-                            return nullptr;
-                        }
-                        
-                        return Map[static_cast<std::size_t>(val)];
+                        return mqtt5::message::SubscribeFieldsCommon::ListMembersCommon::ElementMembersCommon::OptionsMembersCommon::RetainHandlingCommon::valueName(val);
                     }
                     
                 };
