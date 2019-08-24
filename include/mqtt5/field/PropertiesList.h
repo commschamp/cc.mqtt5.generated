@@ -17,7 +17,7 @@ namespace mqtt5
 namespace field
 {
 
-/// @brief Scope for all the member fields of @ref PropertiesList list.
+/// @brief Scope for all the member fields of ///     @ref PropertiesList list.
 /// @tparam TOpt Protocol options.
 template <typename TOpt = mqtt5::options::DefaultOptions>
 struct PropertiesListMembers
