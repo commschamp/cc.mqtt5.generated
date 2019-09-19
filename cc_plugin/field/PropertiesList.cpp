@@ -32,6 +32,7 @@ QVariantMap createProps_propertiesList(const char* name, bool serHidden)
             .serialisedHidden()
             .prefixName("Length")
             .showPrefix()
+            .appendIndexToElementName()
             .asMap();
     
 }

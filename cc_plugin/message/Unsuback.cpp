@@ -43,6 +43,7 @@ static QVariantMap createProps_list()
             .name(Field::name())
             .add(cc_plugin::field::createProps_reasonCode(Field::ValueType::value_type::name()))
             .serialisedHidden()
+            .appendIndexToElementName()
             .asMap();
     
 }
