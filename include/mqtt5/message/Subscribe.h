@@ -269,7 +269,7 @@ struct SubscribeFields
                 ///     related to @b comms::field::Bitfield class from COMMS library
                 ///     for details.
                 ///
-                ///      The generated access functions are:
+                ///     The generated access functions are:
                 ///     @li @b field_qos() - for OptionsMembers::Qos member field.
                 ///     @li @b field_bits() - for OptionsMembers::Bits member field.
                 ///     @li @b field_retainHandling() - for OptionsMembers::RetainHandling member field.
