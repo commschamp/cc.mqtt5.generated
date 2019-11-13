@@ -48,68 +48,57 @@ auto dispatchClientInputMessage(
     case mqtt5::MsgId_Connack:
     {
         using MsgType = mqtt5::message::Connack<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Publish:
     {
         using MsgType = mqtt5::message::Publish<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Puback:
     {
         using MsgType = mqtt5::message::Puback<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Pubrec:
     {
         using MsgType = mqtt5::message::Pubrec<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Pubrel:
     {
         using MsgType = mqtt5::message::Pubrel<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Pubcomp:
     {
         using MsgType = mqtt5::message::Pubcomp<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Suback:
     {
         using MsgType = mqtt5::message::Suback<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Unsuback:
     {
         using MsgType = mqtt5::message::Unsuback<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Pingresp:
     {
         using MsgType = mqtt5::message::Pingresp<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Disconnect:
     {
         using MsgType = mqtt5::message::Disconnect<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Auth:
     {
         using MsgType = mqtt5::message::Auth<InterfaceType, TProtOptions>;
-        auto& castedMsg = static_cast<MsgType&>(msg);
-        return handler.handle(castedMsg);
+        return handler.handle(static_cast<MsgType&>(msg));
     }
     default:
         break;
