@@ -190,14 +190,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for PayloadFormatIndicatorMembers::Id member field.
-        ///     @li @b field_value() - for PayloadFormatIndicatorMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for PayloadFormatIndicatorMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for PayloadFormatIndicatorMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -270,14 +272,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for MessageExpiryIntervalMembers::Id member field.
-        ///     @li @b field_value() - for MessageExpiryIntervalMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for MessageExpiryIntervalMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for MessageExpiryIntervalMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -348,14 +352,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ContentTypeMembers::Id member field.
-        ///     @li @b field_value() - for ContentTypeMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ContentTypeMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ContentTypeMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -426,14 +432,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ResponseTopicMembers::Id member field.
-        ///     @li @b field_value() - for ResponseTopicMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ResponseTopicMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ResponseTopicMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -504,14 +512,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for CorrelationDataMembers::Id member field.
-        ///     @li @b field_value() - for CorrelationDataMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for CorrelationDataMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for CorrelationDataMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -582,14 +592,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for SubscriptionIdMembers::Id member field.
-        ///     @li @b field_value() - for SubscriptionIdMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for SubscriptionIdMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for SubscriptionIdMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -662,14 +674,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for SessionExpiryIntervalMembers::Id member field.
-        ///     @li @b field_value() - for SessionExpiryIntervalMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for SessionExpiryIntervalMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for SessionExpiryIntervalMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -740,14 +754,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for AssignedClientIdMembers::Id member field.
-        ///     @li @b field_value() - for AssignedClientIdMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for AssignedClientIdMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for AssignedClientIdMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -820,14 +836,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ServerKeepAliveMembers::Id member field.
-        ///     @li @b field_value() - for ServerKeepAliveMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ServerKeepAliveMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ServerKeepAliveMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -898,14 +916,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for AuthMethodMembers::Id member field.
-        ///     @li @b field_value() - for AuthMethodMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for AuthMethodMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for AuthMethodMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -976,14 +996,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for AuthDataMembers::Id member field.
-        ///     @li @b field_value() - for AuthDataMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for AuthDataMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for AuthDataMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1054,14 +1076,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for RequestProblemInfoMembers::Id member field.
-        ///     @li @b field_value() - for RequestProblemInfoMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for RequestProblemInfoMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for RequestProblemInfoMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1134,14 +1158,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for WillDelayIntervalMembers::Id member field.
-        ///     @li @b field_value() - for WillDelayIntervalMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for WillDelayIntervalMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for WillDelayIntervalMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1212,14 +1238,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for RequestResponseInfoMembers::Id member field.
-        ///     @li @b field_value() - for RequestResponseInfoMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for RequestResponseInfoMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for RequestResponseInfoMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1290,14 +1318,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ResponseInfoMembers::Id member field.
-        ///     @li @b field_value() - for ResponseInfoMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ResponseInfoMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ResponseInfoMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1368,14 +1398,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ServerRefMembers::Id member field.
-        ///     @li @b field_value() - for ServerRefMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ServerRefMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ServerRefMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1446,14 +1478,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ReasonStrMembers::Id member field.
-        ///     @li @b field_value() - for ReasonStrMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ReasonStrMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ReasonStrMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1527,14 +1561,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for ReceiveMaxMembers::Id member field.
-        ///     @li @b field_value() - for ReceiveMaxMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for ReceiveMaxMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for ReceiveMaxMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1606,14 +1642,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for TopicAliasMaxMembers::Id member field.
-        ///     @li @b field_value() - for TopicAliasMaxMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for TopicAliasMaxMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for TopicAliasMaxMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1697,14 +1735,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for MaxQosMembers::Id member field.
-        ///     @li @b field_value() - for MaxQosMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for MaxQosMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for MaxQosMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1775,14 +1815,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for RetainAvailableMembers::Id member field.
-        ///     @li @b field_value() - for RetainAvailableMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for RetainAvailableMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for RetainAvailableMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1870,14 +1912,16 @@ struct PropertyMembers
                 >;
         public:
             /// @brief Allow access to internal fields.
-            /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+            /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
             ///     related to @b comms::field::Bundle class from COMMS library
             ///     for details.
             ///
             ///     The generated access functions are:
-            ///     @li @b field_first() - for ValueMembers::First member field.
-            ///     @li @b field_second() - for ValueMembers::Second member field.
-            COMMS_FIELD_MEMBERS_ACCESS(
+            ///     @li @b Field_first @b field_first() -
+            ///         for ValueMembers::First member field.
+            ///     @li @b Field_second @b field_second() -
+            ///         for ValueMembers::Second member field.
+            COMMS_FIELD_MEMBERS_NAMES(
                 first,
                 second
             );
@@ -1912,14 +1956,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for UserPropertyMembers::Id member field.
-        ///     @li @b field_value() - for UserPropertyMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for UserPropertyMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for UserPropertyMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -1991,14 +2037,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for MaxPacketSizeMembers::Id member field.
-        ///     @li @b field_value() - for MaxPacketSizeMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for MaxPacketSizeMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for MaxPacketSizeMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -2069,14 +2117,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for WildcardSubAvailMembers::Id member field.
-        ///     @li @b field_value() - for WildcardSubAvailMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for WildcardSubAvailMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for WildcardSubAvailMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -2147,14 +2197,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for SubIdAvailMembers::Id member field.
-        ///     @li @b field_value() - for SubIdAvailMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for SubIdAvailMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for SubIdAvailMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -2225,14 +2277,16 @@ struct PropertyMembers
             >;
     public:
         /// @brief Allow access to internal fields.
-        /// @details See definition of @b COMMS_FIELD_MEMBERS_ACCESS macro
+        /// @details See definition of @b COMMS_FIELD_MEMBERS_NAMES macro
         ///     related to @b comms::field::Bundle class from COMMS library
         ///     for details.
         ///
         ///     The generated access functions are:
-        ///     @li @b field_id() - for SharedSubAvailMembers::Id member field.
-        ///     @li @b field_value() - for SharedSubAvailMembers::Value member field.
-        COMMS_FIELD_MEMBERS_ACCESS(
+        ///     @li @b Field_id @b field_id() -
+        ///         for SharedSubAvailMembers::Id member field.
+        ///     @li @b Field_value @b field_value() -
+        ///         for SharedSubAvailMembers::Value member field.
+        COMMS_FIELD_MEMBERS_NAMES(
             id,
             value
         );
@@ -2298,7 +2352,7 @@ class Property : public
         >;
 public:
     /// @brief Allow access to internal fields.
-    /// @details See definition of @b COMMS_VARIANT_MEMBERS_ACCESS macro
+    /// @details See definition of @b COMMS_VARIANT_MEMBERS_NAMES macro
     ///     related to @b comms::field::Variant class from COMMS library
     ///     for details.
     ///
@@ -2329,7 +2383,7 @@ public:
     ///     @li @b initField_wildcardSubAvail() and @b accessField_wildcardSubAvail() - for PropertyMembers::WildcardSubAvail member field.
     ///     @li @b initField_subIdAvail() and @b accessField_subIdAvail() - for PropertyMembers::SubIdAvail member field.
     ///     @li @b initField_sharedSubAvail() and @b accessField_sharedSubAvail() - for PropertyMembers::SharedSubAvail member field.
-    COMMS_VARIANT_MEMBERS_ACCESS(
+    COMMS_VARIANT_MEMBERS_NAMES(
         payloadFormatIndicator,
         messageExpiryInterval,
         contentType,

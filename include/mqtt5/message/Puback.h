@@ -79,16 +79,19 @@ class Puback : public
         >;
 
 public:
-    /// @brief Allow access to internal fields.
-    /// @details See definition of @b COMMS_MSG_FIELDS_ACCESS macro
+    /// @brief Provide names and allow access to internal fields.
+    /// @details See definition of @b COMMS_MSG_FIELDS_NAMES macro
     ///     related to @b comms::MessageBase class from COMMS library
     ///     for details.
     ///
-    ///     The generated functions are:
-    ///     @li @b field_packetId() for @ref PubackFields::PacketId field.
-    ///     @li @b field_reasonCode() for @ref PubackFields::ReasonCode field.
-    ///     @li @b field_propertiesList() for @ref PubackFields::PropertiesList field.
-    COMMS_MSG_FIELDS_ACCESS(
+    ///     The generated types and functions are:
+    ///     @li @b Field_packetId type and @b field_packetId() fuction
+    ///         for @ref PubackFields::PacketId field.
+    ///     @li @b Field_reasonCode type and @b field_reasonCode() fuction
+    ///         for @ref PubackFields::ReasonCode field.
+    ///     @li @b Field_propertiesList type and @b field_propertiesList() fuction
+    ///         for @ref PubackFields::PropertiesList field.
+    COMMS_MSG_FIELDS_NAMES(
         packetId,
         reasonCode,
         propertiesList
