@@ -13,10 +13,10 @@ function (cc_plugin_all_messages)
         field/PropertiesList.cpp
         field/Property.cpp
         field/ProtocolName.cpp
+        field/Topic.cpp
         field/Qos.cpp
         field/ReasonCode.cpp
         field/String.cpp
-        field/Topic.cpp
         field/VarLenInt.cpp
         Message.cpp
         message/Auth.cpp
