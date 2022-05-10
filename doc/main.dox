@@ -2,7 +2,7 @@
 /// @tableofcontents
 /// This generated code implements "mqtt5" binary protocol using various
 /// classes from
-/// <a href="https://github.com/commschamp/comms_champion#comms-library">COMMS Library</a>.@n
+/// <a href="https://github.com/commschamp/comms">COMMS Library</a>.@n
 /// Below is a short summary of generated classes.
 /// Please refer to <b>"How to Use Defined Custom Protocol"</b> page of its documentation
 /// for detailed explanation on how to use them.
@@ -15,16 +15,16 @@
 ///
 /// @section main_messages Available Message Classes
 /// The following namespaces contain all the classes describing available messages:
-/// @li @ref mqtt5::message (residing in @b mqtt5/message directory).
+/// @li @ref mqtt5::message (defined in @b mqtt5/message  directory)
 ///
 /// @section main_fields Available Common Fields
 /// The following namespaces contain all definition of all the fields,
 /// which can be references by multiple messages:
-/// @li @ref mqtt5::field (residing in @b mqtt5/field directory).
+/// @li @ref mqtt5::field (defined in @b mqtt5/field  directory)
 ///
 /// @section main_interfaces Common Interface Classes
 /// The available common interface classes are:
-/// @li @ref mqtt5::Message from @b mqtt5/Message.h header file).
+/// @li @ref mqtt5::Message (defined in @b mqtt5/Message.h header file).
 ///
 /// @section main_frames Frame (Protocol Stack) Classes
 /// The available frame (protocol stack) classes are:
@@ -55,17 +55,17 @@
 /// based.
 ///
 /// The available functions are:
-/// @li @ref mqtt5::dispatch::dispatchMessage
+/// @li @ref mqtt5::dispatch::dispatchMessage()
 /// (defined in @b mqtt5/dispatch/DispatchMessage.h header file).
-/// @li @ref mqtt5::dispatch::dispatchMessageDefaultOptions
+/// @li @ref mqtt5::dispatch::dispatchMessageDefaultOptions()
 /// (defined in @b mqtt5/dispatch/DispatchMessage.h header file).
-/// @li @ref mqtt5::dispatch::dispatchServerInputMessage
+/// @li @ref mqtt5::dispatch::dispatchServerInputMessage()
 /// (defined in @b mqtt5/dispatch/DispatchServerInputMessage.h header file).
-/// @li @ref mqtt5::dispatch::dispatchServerInputMessageDefaultOptions
+/// @li @ref mqtt5::dispatch::dispatchServerInputMessageDefaultOptions()
 /// (defined in @b mqtt5/dispatch/DispatchServerInputMessage.h header file).
-/// @li @ref mqtt5::dispatch::dispatchClientInputMessage
+/// @li @ref mqtt5::dispatch::dispatchClientInputMessage()
 /// (defined in @b mqtt5/dispatch/DispatchClientInputMessage.h header file).
-/// @li @ref mqtt5::dispatch::dispatchClientInputMessageDefaultOptions
+/// @li @ref mqtt5::dispatch::dispatchClientInputMessageDefaultOptions()
 /// (defined in @b mqtt5/dispatch/DispatchClientInputMessage.h header file).
 ///
 /// There are also some dispatcher objects to be used with
