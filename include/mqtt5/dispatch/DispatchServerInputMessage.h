@@ -26,10 +26,10 @@ namespace dispatch
 ///     to handle and one for the interface class as well.
 ///     @code
 ///     using MyInterface = mqtt5::Message<...>;
-///     using MyConnack = mqtt5::message::Connack<MyInterface, mqtt5::options::DefaultOptions>;
+///     using MyConnect = mqtt5::message::Connect<MyInterface, mqtt5::options::DefaultOptions>;
 ///     using MyPublish = mqtt5::message::Publish<MyInterface, mqtt5::options::DefaultOptions>;
 ///     struct MyHandler {
-///         void handle(MyConnack& msg) {...}
+///         void handle(MyConnect& msg) {...}
 ///         void handle(MyPublish& msg) {...}
 ///         ...
 ///         // Handle all unexpected or irrelevant messages.
@@ -47,9 +47,9 @@ auto dispatchServerInputMessage(
 {
     using InterfaceType = typename std::decay<decltype(msg)>::type;
     switch(id) {
-    case mqtt5::MsgId_Connack:
+    case mqtt5::MsgId_Connect:
     {
-        using MsgType = mqtt5::message::Connack<InterfaceType, TProtOptions>;
+        using MsgType = mqtt5::message::Connect<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Publish:
@@ -77,19 +77,19 @@ auto dispatchServerInputMessage(
         using MsgType = mqtt5::message::Pubcomp<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
-    case mqtt5::MsgId_Suback:
+    case mqtt5::MsgId_Subscribe:
     {
-        using MsgType = mqtt5::message::Suback<InterfaceType, TProtOptions>;
+        using MsgType = mqtt5::message::Subscribe<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
-    case mqtt5::MsgId_Unsuback:
+    case mqtt5::MsgId_Unsubscribe:
     {
-        using MsgType = mqtt5::message::Unsuback<InterfaceType, TProtOptions>;
+        using MsgType = mqtt5::message::Unsubscribe<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
-    case mqtt5::MsgId_Pingresp:
+    case mqtt5::MsgId_Pingreq:
     {
-        using MsgType = mqtt5::message::Pingresp<InterfaceType, TProtOptions>;
+        using MsgType = mqtt5::message::Pingreq<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
     case mqtt5::MsgId_Disconnect:
