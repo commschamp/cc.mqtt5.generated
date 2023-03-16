@@ -17,7 +17,7 @@
 #define CC_MQTT5_MINOR_VERSION (2)
 
 /// @brief Patch version of the protocol library.
-#define CC_MQTT5_PATCH_VERSION (0)
+#define CC_MQTT5_PATCH_VERSION (1)
 
 /// @brief Full version of the protocol library as single number.
 #define CC_MQTT5_VERSION (COMMS_MAKE_VERSION(CC_MQTT5_MAJOR_VERSION, CC_MQTT5_MINOR_VERSION, CC_MQTT5_PATCH_VERSION))
