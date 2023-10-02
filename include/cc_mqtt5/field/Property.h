@@ -864,10 +864,43 @@ struct PropertyMembers
             /// @brief Re-definition of the value type.
             using ValueType = typename Base::ValueType;
 
+            /// @brief Single special value name info entry.
+            using SpecialNameInfo = cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::SpecialNameInfo;
+
+            /// @brief Type returned from @ref specialNamesMap() member function.
+            /// @details The @b first value of the pair is pointer to the map array,
+            ///     The @b second value of the pair is the size of the array.
+            using SpecialNamesMapInfo = cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::SpecialNamesMapInfo;
+
             /// @brief Compile time detection of special values presence.
             static constexpr bool hasSpecials()
             {
                 return cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::hasSpecials();
+            }
+
+            /// @brief Special value <b>"Infinite"</b>.
+            /// @see @ref cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::valueInfinite().
+            static constexpr ValueType valueInfinite()
+            {
+                return cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::valueInfinite();
+            }
+
+            /// @brief Check the value is equal to special @ref valueInfinite().
+            bool isInfinite() const
+            {
+                return Base::getValue() == valueInfinite();
+            }
+
+            /// @brief Assign special value @ref valueInfinite() to the field.
+            void setInfinite()
+            {
+                Base::setValue(valueInfinite());
+            }
+
+            /// @brief Retrieve map of special value names
+            static SpecialNamesMapInfo specialNamesMap()
+            {
+                return cc_mqtt5::field::PropertyMembersCommon::SessionExpiryIntervalMembersCommon::ValueCommon::specialNamesMap();
             }
 
             /// @brief Name of the field.
@@ -2469,7 +2502,7 @@ struct PropertyMembers
             >;
     };
 
-    /// @brief Definition of <b>"Topic Alias Maximum"</b> field.
+    /// @brief Definition of <b>"Topic Alias"</b> field.
     class TopicAlias : public
         comms::field::Bundle<
             cc_mqtt5::field::FieldBase<>,

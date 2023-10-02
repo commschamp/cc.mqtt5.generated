@@ -268,13 +268,15 @@ struct ConnectFields
     class KeepAlive : public
         comms::field::IntValue<
             cc_mqtt5::field::FieldBase<>,
-            std::uint16_t
+            std::uint16_t,
+            comms::option::def::UnitsSeconds
         >
     {
         using Base =
             comms::field::IntValue<
                 cc_mqtt5::field::FieldBase<>,
-                std::uint16_t
+                std::uint16_t,
+                comms::option::def::UnitsSeconds
             >;
     public:
         /// @brief Re-definition of the value type.
