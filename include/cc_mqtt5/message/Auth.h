@@ -13,6 +13,7 @@
 #include "cc_mqtt5/message/AuthCommon.h"
 #include "cc_mqtt5/options/DefaultOptions.h"
 #include "comms/MessageBase.h"
+#include "comms/field/Optional.h"
 #include "comms/options.h"
 
 namespace cc_mqtt5
@@ -29,16 +30,40 @@ template <typename TOpt = cc_mqtt5::options::DefaultOptions>
 struct AuthFields
 {
     /// @brief Definition of <b>"Reason Code"</b> field.
-    using ReasonCode =
-        cc_mqtt5::field::ReasonCode<
-            TOpt
-        >;
+    class ReasonCode : public
+        comms::field::Optional<
+            cc_mqtt5::field::ReasonCode<TOpt>
+        >
+    {
+        using Base =
+            comms::field::Optional<
+                cc_mqtt5::field::ReasonCode<TOpt>
+            >;
+    public:
+        /// @brief Name of the field.
+        static const char* name()
+        {
+            return cc_mqtt5::message::AuthFieldsCommon::ReasonCodeCommon::name();
+        }
+    };
 
     /// @brief Definition of <b>"Properties"</b> field.
-    using PropertiesList =
-        cc_mqtt5::field::PropertiesList<
-            TOpt
-        >;
+    class PropertiesList : public
+        comms::field::Optional<
+            cc_mqtt5::field::PropertiesList<TOpt>
+        >
+    {
+        using Base =
+            comms::field::Optional<
+                cc_mqtt5::field::PropertiesList<TOpt>
+            >;
+    public:
+        /// @brief Name of the field.
+        static const char* name()
+        {
+            return cc_mqtt5::message::AuthFieldsCommon::PropertiesListCommon::name();
+        }
+    };
 
     /// @brief All the fields bundled in std::tuple.
     using All = std::tuple<
@@ -91,7 +116,7 @@ public:
 
     // Compile time check for serialisation length.
     static const std::size_t MsgMinLen = Base::doMinLength();
-    static_assert(MsgMinLen == 2U, "Unexpected min serialisation length");
+    static_assert(MsgMinLen == 0U, "Unexpected min serialisation length");
 
     /// @brief Name of the message.
     static const char* doName()

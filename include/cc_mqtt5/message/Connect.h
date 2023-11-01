@@ -690,9 +690,7 @@ public:
         return
             ((Base::transportField_flags().field_retain().getValue() == static_cast<typename Base::TransportField_flags::Field_retain::ValueType>(0)) &&
              (Base::transportField_flags().field_qos().getValue() == static_cast<typename Base::TransportField_flags::Field_qos::ValueType>(0)) &&
-             (Base::transportField_flags().field_dup().getValue() == static_cast<typename Base::TransportField_flags::Field_dup::ValueType>(0)) &&
-             (((!field_flags().field_high().getBitValue_passwordFlag()) ||
-               (field_flags().field_high().getBitValue_userNameFlag()))));
+             (Base::transportField_flags().field_dup().getValue() == static_cast<typename Base::TransportField_flags::Field_dup::ValueType>(0)));
     }
 
     /// @brief Generated refresh functionality.

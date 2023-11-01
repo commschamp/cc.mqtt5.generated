@@ -6,9 +6,6 @@
 
 #pragma once
 
-#include "cc_mqtt5/field/PropertiesListCommon.h"
-#include "cc_mqtt5/field/ReasonCodeCommon.h"
-
 namespace cc_mqtt5
 {
 
@@ -22,15 +19,25 @@ struct AuthFieldsCommon
 {
     /// @brief Common types and functions for
     ///     @ref cc_mqtt5::message::AuthFields::ReasonCode field.
-    using ReasonCodeCommon = cc_mqtt5::field::ReasonCodeCommon;
-
-    /// @brief Common definitions of the member fields of
-    ///     @ref cc_mqtt5::message::AuthFields::PropertiesList field.
-    using PropertiesListMembersCommon = cc_mqtt5::field::PropertiesListMembersCommon;
+    struct ReasonCodeCommon
+    {
+        /// @brief Name of the @ref cc_mqtt5::message::AuthFields::ReasonCode field.
+        static const char* name()
+        {
+            return "Reason Code";
+        }
+    };
 
     /// @brief Common types and functions for
     ///     @ref cc_mqtt5::message::AuthFields::PropertiesList field.
-    using PropertiesListCommon = cc_mqtt5::field::PropertiesListCommon;
+    struct PropertiesListCommon
+    {
+        /// @brief Name of the @ref cc_mqtt5::message::AuthFields::PropertiesList field.
+        static const char* name()
+        {
+            return "Properties";
+        }
+    };
 };
 
 /// @brief Common types and functions of 
