@@ -5,15 +5,13 @@
 
 #pragma once
 
-#include <algorithm>
 #include <cstdint>
-#include <iterator>
 #include <tuple>
 #include "cc_mqtt5/MsgId.h"
 #include "cc_mqtt5/field/BinData.h"
 #include "cc_mqtt5/field/FieldBase.h"
-#include "cc_mqtt5/field/Length.h"
 #include "cc_mqtt5/field/PropertiesList.h"
+#include "cc_mqtt5/field/ProtocolName.h"
 #include "cc_mqtt5/field/Qos.h"
 #include "cc_mqtt5/field/String.h"
 #include "cc_mqtt5/message/ConnectCommon.h"
@@ -23,7 +21,6 @@
 #include "comms/field/BitmaskValue.h"
 #include "comms/field/IntValue.h"
 #include "comms/field/Optional.h"
-#include "comms/field/String.h"
 #include "comms/options.h"
 
 namespace cc_mqtt5
@@ -40,55 +37,13 @@ template <typename TOpt = cc_mqtt5::options::DefaultOptions>
 struct ConnectFields
 {
     /// @brief Definition of <b>"Protocol Name"</b> field.
-    class ProtocolName : public
-        comms::field::String<
-            cc_mqtt5::field::FieldBase<>,
+    using ProtocolName =
+        cc_mqtt5::field::ProtocolName<
+            TOpt,
             typename TOpt::message::ConnectFields::ProtocolName,
             comms::option::def::HasName,
-            comms::option::def::FailOnInvalid<>,
-            comms::option::def::FieldType<ProtocolName>,
-            comms::option::def::SequenceSerLengthFieldPrefix<cc_mqtt5::field::Length<TOpt> >
-        >
-    {
-        using Base =
-            comms::field::String<
-                cc_mqtt5::field::FieldBase<>,
-                typename TOpt::message::ConnectFields::ProtocolName,
-                comms::option::def::HasName,
-                comms::option::def::FailOnInvalid<>,
-                comms::option::def::FieldType<ProtocolName>,
-                comms::option::def::SequenceSerLengthFieldPrefix<cc_mqtt5::field::Length<TOpt> >
-            >;
-    public:
-        /// @brief Default constructor.
-        ProtocolName()
-        {
-            static const char Str[] = "MQTT";
-            static const std::size_t StrSize = std::extent<decltype(Str)>::value;
-            Base::setValue(typename Base::ValueType(&Str[0], StrSize - 1));
-        }
-
-        /// @brief Name of the field.
-        static const char* name()
-        {
-            return cc_mqtt5::message::ConnectFieldsCommon::ProtocolNameCommon::name();
-        }
-
-        /// @brief Generated validity check functionality.
-        bool valid() const
-        {
-            if (!Base::valid()) {
-                return false;
-            }
-
-            static const typename Base::ValueType Map[] = {
-                "MQTT"
-            };
-
-            auto iter = std::lower_bound(std::begin(Map), std::end(Map), Base::getValue());
-            return (iter != std::end(Map)) && ((*iter) == Base::getValue());
-        }
-    };
+            comms::option::def::FailOnInvalid<>
+        >;
 
     /// @brief Definition of <b>"Protocol Version"</b> field.
     class ProtocolVersion : public

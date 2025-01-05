@@ -43,6 +43,14 @@ struct BareMetalDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
+        ///     cc_mqtt5::field::ProtocolName field.
+        using ProtocolName =
+            std::tuple<
+                comms::option::app::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>,
+                typename TBase::field::ProtocolName
+            >;
+
+        /// @brief Extra options for @ref
         ///     cc_mqtt5::field::String field.
         using String =
             std::tuple<
@@ -54,20 +62,6 @@ struct BareMetalDefaultOptionsT : public TBase
     /// @brief Extra options for messages.
     struct message : public TBase::message
     {
-        /// @brief Extra options for fields of
-        ///     @ref cc_mqtt5::message::Connect message.
-        struct ConnectFields : public TBase::message::ConnectFields
-        {
-            /// @brief Extra options for @ref
-            ///     cc_mqtt5::message::ConnectFields::ProtocolName
-            ///     field.
-            using ProtocolName =
-                std::tuple<
-                    comms::option::app::FixedSizeStorage<DEFAULT_SEQ_FIXED_STORAGE_SIZE>,
-                    typename TBase::message::ConnectFields::ProtocolName
-                >;
-        };
-
         /// @brief Extra options for fields of
         ///     @ref cc_mqtt5::message::Publish message.
         struct PublishFields : public TBase::message::PublishFields

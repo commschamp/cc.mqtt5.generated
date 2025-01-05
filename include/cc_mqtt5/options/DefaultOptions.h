@@ -123,6 +123,10 @@ struct DefaultOptionsT : public TBase
         }; // struct PropertyMembers
 
         /// @brief Extra options for @ref
+        ///     cc_mqtt5::field::ProtocolName field.
+        using ProtocolName = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
         ///     cc_mqtt5::field::String field.
         using String = comms::option::app::EmptyOption;
 
