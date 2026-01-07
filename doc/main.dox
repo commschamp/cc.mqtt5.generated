@@ -177,4 +177,3 @@
 ///         cc_mqtt5::options::ClientDefaultOptions
 ///     >;
 /// @endcode
-
